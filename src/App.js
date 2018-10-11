@@ -19,7 +19,7 @@ class App extends Component {
               <input type="password" name="password" />
             </label>
             <br />
-            <input type="button" name="Submit">Submit</input>
+            <input type="button" name="Submit" value="Submit" />
           </form>
         </header>
       </div>

@@ -1,8 +1,18 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Popup from 'reactjs-popup';
 import logo from './agrivolutionLogo.png';
 import help from './help.png';
 import './App.css';
+import Dashboard from './Dashboard';
+
+function login(){
+  ReactDOM.render(<Dashboard />, document.getElementById("root"));
+};
+
+function register(){
+
+};
 
 class App extends Component {
   render() {
@@ -27,8 +37,8 @@ class App extends Component {
                 </Popup>
             </label>
             <br />
-            <input type="button" name="SignIn" value="Sign-In" />
-            <input type="button" name="Register" value="Register" />
+            <input type="button" name="SignIn" value="Sign-In" onClick={login} />
+            <input type="button" name="Register" value="Register" onClick={register} />
           </form>
         </header>
       </div>

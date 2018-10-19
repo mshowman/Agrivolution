@@ -20,3 +20,14 @@
 .App-link {
   color: #61dafb;
 }
+
+.inset {
+  border-style: inset;
+  text-align: center;
+  align-items: center;
+}
+
+div.inset {
+  width: 500px;
+  margin: auto;
+}

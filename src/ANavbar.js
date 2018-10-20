@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import {Navbar,Nav,NavItem,NavDropdown,MenuItem} from 'react-bootstrap';
 import logo from './agrivolutionLogo.png';
-import './bootstrap/css/bootstrap.css';
+//import './bootstrap/css/bootstrap.css';
 //change the color of the navbar
 const navbar = {backgroundColor: '#FFFF'};
 
@@ -10,7 +10,7 @@ class ANavbar extends Component{
   render(){
   return(
       //Create the NAV menu bar
-      <Navbar inverse collapseOnSelect  >
+      <Navbar   >
         <Navbar.Header>
            <Navbar.Brand pullLeft>
             <img  src={logo} className="App-logo" alt="logo" />
@@ -20,7 +20,7 @@ class ANavbar extends Component{
         <Navbar.Collapse>
           <Nav >
 
-            <NavDropdown eventKey={3} title="Farms" id="basic-nav-dropdown">
+            <NavDropdown eventKey={3} title="Farms" id="basic-nav-dropdown" on="hover">
               <MenuItem eventKey={3.1}>Register</MenuItem>
               <MenuItem eventKey={3.2}>Create Crop Cycle</MenuItem>
               <MenuItem eventKey={3.3}>Business Rules</MenuItem>

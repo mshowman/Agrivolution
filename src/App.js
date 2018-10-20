@@ -7,6 +7,7 @@ import './App.css';
 //import components
 import Dashboard from './Dashboard';
 import ANavbar from './ANavbar.js'
+import RegisterOwner from './RegisterOwner.js';
 
 
 function login(){
@@ -14,7 +15,7 @@ function login(){
 };
 
 function register(){
-
+  ReactDOM.render(<div> <ANavbar /> <RegisterOwner /></div>, document.getElementById("root"));
 };
 
 class App extends Component {

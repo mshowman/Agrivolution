@@ -18,10 +18,26 @@ class RegisterOwner extends Component {
       <div className="text-center">
 
 
-      <form >
+      <form inline>
+
+      <FormGroup controlId="formControlsText">
+        <ControlLabel>First Name:</ControlLabel>
+        <FormControl
+          placeholder="First Name"
+          type="email"
+        />
+        </FormGroup>
+
+        <FormGroup controlId="formControlsText">
+          <ControlLabel>Last Name:</ControlLabel>
+          <FormControl
+            placeholder="Last Name"
+            type="email"
+          />
+          </FormGroup>
 
         <FormGroup controlId="formControlsEmail">
-          <ControlLabel>"email"</ControlLabel>
+          <ControlLabel>Email:</ControlLabel>
           <FormControl
             placeholder="Enter Email Address"
             type="email"
@@ -29,24 +45,12 @@ class RegisterOwner extends Component {
         </FormGroup>
 
         <FormGroup controlId="formControlsPassword">
-          <ControlLabel>"password"</ControlLabel>
+          <ControlLabel>Password:</ControlLabel>
           <FormControl
             placeholder="Enter Password"
             type="password"
           />
         </FormGroup>
-
-
-            <label >Email Address:</label>
-            <input type="email"  id="email" />
-            <br/>
-            <label >Password:</label>
-            <input type="password" id="pwd" />
-
-
-          <div class="checkbox">
-            <label><input type="checkbox" /> Remember me</label>
-          </div>
 
         </form>
 

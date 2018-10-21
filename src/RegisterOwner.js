@@ -61,7 +61,7 @@ class RegisterOwner extends Component {
             <label>
               Username:
               <input type="text" name="username" />
-                <Popup trigger={<img src={help} alt="help" height='36' width='36' className="App-header"/>} position="right center" on="hover">
+                <Popup trigger={<img src={help} alt="help" height='36' width='36' />} position="right center" on="hover">
                   <div>Username must be in the form of a valid email.</div>
                 </Popup>
             </label>
@@ -71,7 +71,7 @@ class RegisterOwner extends Component {
             <label>
               Password:
               <input type="password" name="password" />
-                <Popup trigger={<img src={help} alt="help" height='36' width='36' className="App-header"/>} position="right center" on="hover">
+                <Popup trigger={<img src={help} alt="help" height='36' width='36' />} position="right center" on="hover">
                   <div>Password must have at least one captial, one number, and one symbol.</div>
                 </Popup>
             </label>

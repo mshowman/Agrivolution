@@ -5,7 +5,6 @@ import {FormControl, FormGroup, ControlLabel, Form }from 'react-bootstrap';
 import Popup from 'reactjs-popup';
 import help from './help.png';
 import './App.css';
-const h1Green = {};
 
 
 
@@ -16,7 +15,7 @@ class RegisterOwner extends Component {
         <div>
           {/*header*/}
           <div className="text-center">
-            <h1> Register Owner </h1>
+          <h1> Register Owner </h1>
 
           {/*build the form for first name, last name, email, and password*/}
           <Form inline>
@@ -57,29 +56,29 @@ class RegisterOwner extends Component {
 
           <hr/>
 
-          <form>
-            <label>
-              Username:
-              <input type="text" name="username" />
+          <Form inline className="rounded">
+
+          <FormGroup controlId="formControlsText">
+            <ControlLabel>Username:</ControlLabel>
+            <FormControl type="text"/>
                 <Popup trigger={<img src={help} alt="help" height='36' width='36' />} position="right center" on="hover">
                   <div>Username must be in the form of a valid email.</div>
                 </Popup>
-            </label>
+            </FormGroup>
 
             <br />
 
-            <label>
-              Password:
-              <input type="password" name="password" />
+            <FormGroup controlId="formControlsText">
+              <ControlLabel>Password:</ControlLabel>
+              <FormControl type="password"/>
                 <Popup trigger={<img src={help} alt="help" height='36' width='36' />} position="right center" on="hover">
                   <div>Password must have at least one captial, one number, and one symbol.</div>
                 </Popup>
-            </label>
-
+            </FormGroup>
             <br />
             <br />
             <input type="button" name="Register" value="Register" />
-          </form>
+          </Form>
 
         </div>
       </div>

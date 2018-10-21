@@ -2,6 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import RegisterOwner from './RegisterOwner';
+import ANavbar from './ANavbar';
 //import Dashboard from './Dashboard';
 import * as serviceWorker from './serviceWorker';
 

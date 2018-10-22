@@ -1,8 +1,22 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import Popup from 'reactjs-popup';
 import logo from './agrivolutionLogo.png';
 import help from './help.png';
 import './App.css';
+//import components
+import Dashboard from './Dashboard';
+import ANavbar from './ANavbar.js'
+import RegisterOwner from './RegisterOwner.js';
+
+
+function login(){
+  ReactDOM.render(<div> <ANavbar /> <Dashboard /></div>, document.getElementById("root"));
+};
+
+function register(){
+  ReactDOM.render(<div> <ANavbar /> <RegisterOwner /></div>, document.getElementById("root"));
+};
 
 class App extends Component {
   render() {
@@ -27,8 +41,8 @@ class App extends Component {
                 </Popup>
             </label>
             <br />
-            <input type="button" name="SignIn" value="Sign-In" />
-            <input type="button" name="Register" value="Register" />
+            <input type="button" name="SignIn" value="Sign-In" onClick={login} />
+            <input type="button" name="Register" value="Register" onClick={register} />
           </form>
         </header>
       </div>

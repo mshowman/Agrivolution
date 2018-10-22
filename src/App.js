@@ -4,14 +4,18 @@ import Popup from 'reactjs-popup';
 import logo from './agrivolutionLogo.png';
 import help from './help.png';
 import './App.css';
+//import components
 import Dashboard from './Dashboard';
+import ANavbar from './ANavbar.js'
+import RegisterOwner from './RegisterOwner.js';
+
 
 function login(){
-  ReactDOM.render(<Dashboard />, document.getElementById("root"));
+  ReactDOM.render(<div> <ANavbar /> <Dashboard /></div>, document.getElementById("root"));
 };
 
 function register(){
-
+  ReactDOM.render(<div> <ANavbar /> <RegisterOwner /></div>, document.getElementById("root"));
 };
 
 class App extends Component {

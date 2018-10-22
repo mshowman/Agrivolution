@@ -6,6 +6,7 @@ import './ANavbar.css';
 
 //change the color of the navbar
 //const navbar = {backgroundColor: '#FFFF'};
+const username = "Tim E. Anybody";
 
 class ANavbar extends Component{
   render(){
@@ -52,7 +53,7 @@ class ANavbar extends Component{
           </Nav>
           <Nav pullRight>
             <NavItem eventKey={1} href="#">
-                Sign Out
+                {username} - Sign Out
             </NavItem>
 
           </Nav>

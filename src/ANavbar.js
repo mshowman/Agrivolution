@@ -1,12 +1,28 @@
 //AgrivolutionNavbarComponent class
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import {Navbar,Nav,NavItem,NavDropdown,MenuItem} from 'react-bootstrap';
 import logo from './agrivolutionLogo.png';
 import './ANavbar.css';
+import RegisterUser from './RegisterUser.js';
+import App from './App.js';
 
 //change the color of the navbar
 //const navbar = {backgroundColor: '#FFFF'};
 const username = "Tim E. Anybody";
+
+
+// function userLevelDisplay(level){
+//       if(level == "owner"){
+//
+//       }
+//       if(level == "manager"){
+//
+//       }
+//       if(level == "member")
+//
+//
+// }
 
 class ANavbar extends Component{
   render(){
@@ -15,7 +31,7 @@ class ANavbar extends Component{
       <Navbar collapseOnSelect>
         <Navbar.Header>
            <Navbar.Brand pullLeft>
-            <img  src={logo} alt="logo" />
+            <img  src={logo} onClick={MainApp} href="#" alt="logo" />
            </Navbar.Brand>
           <Navbar.Toggle />
         </Navbar.Header>
@@ -29,7 +45,7 @@ class ANavbar extends Component{
             </NavDropdown>
 
             <NavDropdown eventKey={4} title="Users" id="basic-nav-dropdown">
-              <MenuItem eventKey={4.1}>Register</MenuItem>
+              <MenuItem eventKey={4.1} onClick={register}>Register</MenuItem>
             </NavDropdown>
 
             <NavDropdown eventKey={5} title="Devices" id="basic-nav-dropdown">
@@ -63,5 +79,13 @@ class ANavbar extends Component{
     );
   }
 }
+
+function register(){
+  ReactDOM.render(<div> <ANavbar /> <RegisterUser /></div>, document.getElementById("root"));
+};
+
+function MainApp(){
+  ReactDOM.render(<App />, document.getElementById("root"));
+};
 
 export default ANavbar;

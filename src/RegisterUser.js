@@ -8,15 +8,15 @@ import './App.css';
 
 
 
-
-class RegisterOwner extends Component {
+class RegisterUser extends Component {
   render(){
       return(
 
         <div>
           {/*header*/}
-          <div className="text-center">
-          <PageHeader> Register Owner </PageHeader>
+          <div className="page-header">
+          <PageHeader> Register a new <br/>
+              Manger or Member </PageHeader>
 
           {/*build the form for first name, last name, email, and password*/}
           <Form inline>
@@ -39,15 +39,25 @@ class RegisterOwner extends Component {
 
             <div class="text-center">
               <FormGroup controlId="formControlsText">
-                <ControlLabel>   Phone:</ControlLabel>
+                <ControlLabel>Phone:</ControlLabel>
                 <FormControl placeholder="098-765-4321" type="tel"/>
               </FormGroup>
             </div>
 
             <div class="text-center">
               <FormGroup controlId="formControlsEmail">
-                <ControlLabel>   Email:</ControlLabel>
+                <ControlLabel>Email:</ControlLabel>
                 <FormControl placeholder="Someone@email.com" type="email"/>
+              </FormGroup>
+            </div>
+
+            <div class="text-center">
+              <FormGroup controlId="formControlsSelect">
+                <ControlLabel>Account Type:</ControlLabel>
+                <FormControl componentClass="select" placeholder="select">
+                  <option value="Manager">Manager</option>
+                  <option value="Member">Member</option>
+                </FormControl>
               </FormGroup>
             </div>
 
@@ -87,4 +97,4 @@ class RegisterOwner extends Component {
     }
 }
 
-export default RegisterOwner;
+export default RegisterUser;

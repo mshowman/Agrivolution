@@ -59,7 +59,7 @@ class App extends Component {
           <br/>
           <br/>
 
-          <a onClick={forgot}>Forgot username or password?</a>
+          <a onClick={forgot} href="#">Forgot username or password?</a>
 
         </header>
       </div>

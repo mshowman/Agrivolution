@@ -14,7 +14,7 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: green;
+  color: black;
 }
 
 .App-link {
@@ -33,12 +33,13 @@ div.inset {
 }
 
 h1 {
-  color: green;
+  color: black;
 }
 
 .column {
   float: left;
   width: 50%;
+  display: block;
 }
 
 /* Clear floats after the columns */

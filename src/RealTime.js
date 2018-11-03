@@ -4,7 +4,7 @@ import { DropdownButton, MenuItem } from 'react-bootstrap';
 
 class RealTime extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
             hover: false
@@ -35,12 +35,11 @@ class RealTime extends Component {
 
                 <span class="column">
                     <div>
-                        <p>Farm:     
+                        <p>Farm:
                         <DropdownButton
                                 bsSize="medium"
                                 title="[Select Farm]"
                                 id="farmDropdown"
-                                disabled="true"
                             >
                                 <MenuItem eventKey="1">Farm 1</MenuItem>
                                 <MenuItem eventKey="2">Farm 2</MenuItem>
@@ -49,7 +48,7 @@ class RealTime extends Component {
                                 <MenuItem eventKey="5">Farm 5</MenuItem>
                             </DropdownButton>
                         </p>
-                        <p>Grow Area:  
+                        <p>Grow Area:
                         <DropdownButton
                                 bsSize="medium"
                                 title="[Select Grow Area]"

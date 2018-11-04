@@ -7,6 +7,7 @@ import './ANavbar.css';
 import RegisterUser from './RegisterUser.js';
 import Dashboard from './Dashboard.js';
 import RealTime from './RealTime.js';
+import RegisterFarm from './RegisterFarm';
 
 //change the color of the navbar
 //const navbar = {backgroundColor: '#FFFF'};
@@ -40,7 +41,7 @@ class ANavbar extends Component{
           <Nav >
 
             <NavDropdown eventKey={3} title="Farms" id="basic-nav-dropdown"  >
-              <MenuItem eventKey={3.1}>Register</MenuItem>
+              <MenuItem eventKey={3.1} onClick={registerFarm}>Register</MenuItem>
               <MenuItem eventKey={3.2}>Create Crop Cycle</MenuItem>
               <MenuItem eventKey={3.3}>Business Rules</MenuItem>
             </NavDropdown>
@@ -87,6 +88,10 @@ function register(){
 
 function realTimeStatus(){
   ReactDOM.render(<div> <ANavbar /> <RealTime /> </div>, document.getElementById("root"));
+}
+
+function registerFarm(){
+  ReactDOM.render(<div><ANavbar /> <RegisterFarm /></div>, document.getElementById("root"));
 }
 
 function MainApp(){

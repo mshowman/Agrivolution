@@ -14,7 +14,7 @@ class RegisterUser extends Component {
 
         <div>
           {/*header*/}
-          <div className="page-header">
+          <div className="page-header" class="text-center">
           <PageHeader> Register a new <br/>
               Manager or Member </PageHeader>
 

@@ -8,9 +8,9 @@ class RegisterFarm extends Component {
 
     render() {
         return (
-            <div>
+          <div className="page-header" class="text-center">
                 <form>
-                    <PageHeader>Register a New Farm</PageHeader>
+                    <PageHeader class="text-center">Register a New Farm</PageHeader>
                     <Form inline>
                         <div class="text-center">
                             <FormGroup controlId="formControlsText">

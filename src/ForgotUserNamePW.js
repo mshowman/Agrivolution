@@ -1,9 +1,16 @@
 //ForgotUserNamePW
 
 import React, {Component} from 'react';
+import ReactDOM from 'react-dom';
 import {FormControl, FormGroup, ControlLabel, PageHeader}from 'react-bootstrap';
 import captcha from './reCAPTCHA.png';
 import './App.css';
+import ForgotUserNamePWlink from './ForgotUserNamePWlink';
+
+function link(){
+  ReactDOM.render(<div> <ForgotUserNamePWlink /> </div>, document.getElementById("root"));
+};
+
 
 class ForgotUserNamePW extends Component{
     render(){
@@ -44,7 +51,7 @@ class ForgotUserNamePW extends Component{
           {/*add in the continue button*/}
           <div className="row">
             <div className="col-sm-4"></div>
-            <input className= "col-sm-4" type="button" name="Continue" value="Continue"/>
+            <input className= "col-sm-4" type="button" name="Continue" value="Continue" onClick={link}/>
             <div className="col-sm-4"></div>
           </div>
 

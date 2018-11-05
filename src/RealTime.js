@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { VictoryChart, VictoryLine } from 'victory';
+import {PageHeader} from 'react-bootstrap';
 import { DropdownButton, MenuItem } from 'react-bootstrap';
 
 class RealTime extends Component {
@@ -13,7 +14,9 @@ class RealTime extends Component {
 
     render() {
         return (
-            <div>
+          <div className="page-header" class="text-center">
+                    <PageHeader class="text-center">Real-Time Reporting</PageHeader>
+
                 <span class="column">
                     <h3><u>Device Status:</u></h3>
                     <h4>Temperature</h4>

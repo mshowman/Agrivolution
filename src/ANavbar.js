@@ -5,7 +5,8 @@ import {Navbar,Nav,NavItem,NavDropdown,MenuItem} from 'react-bootstrap';
 import logo from './agrivolutionLogo.png';
 import './ANavbar.css';
 import RegisterUser from './RegisterUser.js';
-import App from './App.js';
+import Dashboard from './Dashboard.js';
+import RealTime from './RealTime.js';
 
 //change the color of the navbar
 //const navbar = {backgroundColor: '#FFFF'};
@@ -57,7 +58,7 @@ class ANavbar extends Component{
             </NavDropdown>
 
             <NavDropdown eventKey={6} title="Reporting" id="basic-nav-dropdown">
-              <MenuItem eventKey={6.1}>Real-Time</MenuItem>
+              <MenuItem eventKey={6.1} onClick={realTimeStatus} >Real-Time</MenuItem>
               <MenuItem eventKey={6.2}>Historical </MenuItem>
             </NavDropdown>
 
@@ -84,8 +85,12 @@ function register(){
   ReactDOM.render(<div> <ANavbar /> <RegisterUser /></div>, document.getElementById("root"));
 };
 
+function realTimeStatus(){
+  ReactDOM.render(<div> <ANavbar /> <RealTime /> </div>, document.getElementById("root"));
+}
+
 function MainApp(){
-  ReactDOM.render(<App />, document.getElementById("root"));
+  ReactDOM.render(<div> <ANavbar /> <Dashboard /></div>, document.getElementById("root"));
 };
 
 export default ANavbar;

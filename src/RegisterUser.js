@@ -16,7 +16,7 @@ class RegisterUser extends Component {
           {/*header*/}
           <div className="page-header">
           <PageHeader> Register a new <br/>
-              Manger or Member </PageHeader>
+              Manager or Member </PageHeader>
 
           {/*build the form for first name, last name, email, and password*/}
           <Form inline>

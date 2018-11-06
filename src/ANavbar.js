@@ -8,6 +8,7 @@ import RegisterUser from './RegisterUser.js';
 import Dashboard from './Dashboard.js';
 import RealTime from './RealTime.js';
 import RegisterFarm from './RegisterFarm';
+import AccountProfile from './AccountProfile';
 
 //change the color of the navbar
 //const navbar = {backgroundColor: '#FFFF'};
@@ -64,7 +65,7 @@ class ANavbar extends Component{
             </NavDropdown>
 
             <NavDropdown eventKey={7} title="Account" id="basic-nav-dropdown">
-              <MenuItem eventKey={7.1}>Profile</MenuItem>
+              <MenuItem eventKey={7.1} onClick={accountProfile}>Profile</MenuItem>
               <MenuItem eventKey={7.2}>Subscription</MenuItem>
             </NavDropdown>
 
@@ -96,6 +97,10 @@ function registerFarm(){
 
 function MainApp(){
   ReactDOM.render(<div> <ANavbar /> <Dashboard /></div>, document.getElementById("root"));
+};
+
+function accountProfile(){
+  ReactDOM.render(<div> <ANavbar /> <AccountProfile /></div>, document.getElementById("root"));
 };
 
 export default ANavbar;

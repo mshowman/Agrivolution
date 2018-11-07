@@ -4,15 +4,12 @@ import React, { Component } from 'react';
 import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem} from 'react-bootstrap';
 
 
-
+const farmNames = {
+                      Description: 'Farm 1',
+                      Description: 'Farm 2'
+        };
 
 class SummaryDashboard extends Component{
-
-  const farmNames = {
-                        Description: 'Farm 1',
-                        Description: 'Farm 2'
-          };
-          
     render(){
         return(
 

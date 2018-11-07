@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { VictoryChart, VictoryLine } from 'victory';
-import {PageHeader} from 'react-bootstrap';
-import { DropdownButton, MenuItem } from 'react-bootstrap';
+import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem} from 'react-bootstrap';
 
 class RealTime extends Component {
 
@@ -39,6 +38,7 @@ class RealTime extends Component {
                 <span class="column">
                     <div>
                         <p>Farm:
+                        <ButtonToolbar>
                         <DropdownButton
                                 bsSize="medium"
                                 title="[Select Farm]"
@@ -50,8 +50,11 @@ class RealTime extends Component {
                                 <MenuItem eventKey="4">Farm 4</MenuItem>
                                 <MenuItem eventKey="5">Farm 5</MenuItem>
                             </DropdownButton>
+                            </ButtonToolbar>
+
                         </p>
                         <p>Grow Area:
+                        <ButtonToolbar>
                         <DropdownButton
                                 bsSize="medium"
                                 title="[Select Grow Area]"
@@ -62,7 +65,9 @@ class RealTime extends Component {
                                 <MenuItem eventKey="3">Grow Area 3</MenuItem>
                                 <MenuItem eventKey="4">Grow Area 4</MenuItem>
                                 <MenuItem eventKey="5">Grow Area 5</MenuItem>
-                            </DropdownButton></p>
+                            </DropdownButton>
+                            </ButtonToolbar>
+                            </p>
                     </div>
 
                     <div>

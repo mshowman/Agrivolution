@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import {FormControl, FormGroup, ControlLabel, Form }from 'react-bootstrap';
 import Popup from 'reactjs-popup';
 import logo from './agrivolutionLogo.png';
+import logo2 from './Agrivolution-Logo.svg';
 import help from './help.png';
 import './App.css';
 //import components
@@ -29,7 +30,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img  src={logo} className="App-logo" alt="logo" />
+          <img  src={logo2} className="App-logo" alt="logo" />
 
           <Form inline className="rounded">
 

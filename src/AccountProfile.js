@@ -5,7 +5,7 @@ class AccountProfile extends Component {
 
     render() {
         return (
-            <div>
+            <div class="text-center">
                 <PageHeader>Account Profile</PageHeader>
                 <Form inline>
                     <div class="text-center">
@@ -63,7 +63,7 @@ class AccountProfile extends Component {
                 <a href="#">Upgrade Account</a>
                 <hr />
                 <a href="#">Delete Account</a>
-                
+
             </div>
         );
     }

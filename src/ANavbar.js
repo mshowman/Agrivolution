@@ -9,6 +9,7 @@ import Dashboard from './Dashboard.js';
 import RealTime from './RealTime.js';
 import RegisterFarm from './RegisterFarm';
 import AccountProfile from './AccountProfile';
+import SummaryDashboard from './SummaryDashboard.js';
 
 //change the color of the navbar
 //const navbar = {backgroundColor: '#FFFF'};
@@ -61,7 +62,7 @@ class ANavbar extends Component{
 
             <NavDropdown eventKey={6} title="Reporting" id="basic-nav-dropdown">
               <MenuItem eventKey={6.1} onClick={realTimeStatus} >Real-Time</MenuItem>
-              <MenuItem eventKey={6.2}>Historical </MenuItem>
+              <MenuItem eventKey={6.2} onClick={sumDash}>Historical </MenuItem>
             </NavDropdown>
 
             <NavDropdown eventKey={7} title="Account" id="basic-nav-dropdown">
@@ -101,6 +102,10 @@ function MainApp(){
 
 function accountProfile(){
   ReactDOM.render(<div> <ANavbar /> <AccountProfile /></div>, document.getElementById("root"));
+};
+
+function sumDash(){
+  ReactDOM.render(<div> <ANavbar /> <SummaryDashboard /></div>, document.getElementById("root"));
 };
 
 export default ANavbar;

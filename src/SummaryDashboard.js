@@ -2,14 +2,23 @@
 
 import React, { Component } from 'react';
 import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem} from 'react-bootstrap';
+import chance from 'chance';
 
-
-const farmNames = {
-                      Description: 'Farm 1',
-                      Description: 'Farm 2'
-        };
+const farmNames = [];
 
 class SummaryDashboard extends Component{
+  constructor(props) {
+      super(props);
+
+      for (let i = 0; i < 20; i++) {
+          farmNames.push({
+              owner: chance.first(),
+              name: "Farm "+i
+          });
+      }
+
+      this.state = { farmNames };
+  }
     render(){
         return(
 
@@ -23,8 +32,8 @@ class SummaryDashboard extends Component{
                 <select className="form-control">
                           <option>---select---</option>
                             {
-                            this.farmNames.map((v, i) =>
-                            (<option key={i} value={v.Description}>{v.Description}</option>))
+                            this.state.farmNames.map((farmNames, i) =>
+                            (<option key={i} value={farmNames}>{"Farm: " + farmNames}</option>))
                             }
                 </select>
                 </DropdownButton>

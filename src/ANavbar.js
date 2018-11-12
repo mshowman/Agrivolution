@@ -70,12 +70,12 @@ class ANavbar extends Component{
             </NavDropdown>
 
           </Nav>
-          <Nav pullRight>
+          {/*<Nav pullRight>
             <NavItem eventKey={1} href="#">
                 {username} - Sign Out
             </NavItem>
 
-          </Nav>
+          </Nav>}*/}
         </Navbar.Collapse>
       </Navbar>
 

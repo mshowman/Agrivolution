@@ -36,19 +36,20 @@ class SummaryDashboard extends Component{
     render(){
         return(
 
-          <div>
+          <div class="text-center">
             {/*header*/}
             <div className="text-center">
             <PageHeader className="h1"> Historical Summary </PageHeader>
             </div>
 
-          <div class="text-center">
-              <ButtonToolbar>
+          <div>
+          <div className="col-sm-4"></div>
+          <div className="col-sm-4">
+              <ButtonToolbar class="text-center">
                 <DropdownButton
                   bsSize="large"
                   title="List of Farms"
                   id="dropdown-size-large"
-                  class="text-center"
                 >
                 <select className="form-control">
                           <option>---select---</option>
@@ -58,13 +59,10 @@ class SummaryDashboard extends Component{
                             }
                 </select>
                 </DropdownButton>
-              </ButtonToolbar>
 
-              <ButtonToolbar>
                 <DropdownButton
                   title="Grow Area"
                   id="dropdown-size-medium"
-                  class="text-center"
                 >
                 <select className="form-control">
                           <option>---select---</option>
@@ -74,14 +72,11 @@ class SummaryDashboard extends Component{
                             }
                 </select>
                 </DropdownButton>
-              </ButtonToolbar>
 
-              <ButtonToolbar>
                 <DropdownButton
                   bsSize="small"
                   title="Devices"
                   id="dropdown-size-small"
-                  class="text-center"
                 >
                 <select className="form-control">
                           <option>---select---</option>
@@ -92,6 +87,8 @@ class SummaryDashboard extends Component{
                 </select>
                 </DropdownButton>
               </ButtonToolbar>
+              </div>
+              <div className="col-sm-4"></div>
 
           </div>
           </div>

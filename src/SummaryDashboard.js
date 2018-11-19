@@ -3,6 +3,7 @@
 import React, { Component } from 'react';
 import { PageHeader,Panel,Table} from 'react-bootstrap';
 
+{/*later use this section for the API call to populate the arrays*/}
 var testarray = [
   {crop:"Tomato",season:"Fall 2018",yield:10,brule:1},
   {crop:"Lettuce",season:"Fall 2018",yield:50,brule:2},
@@ -29,6 +30,7 @@ class SummaryDashboard extends Component{
   constructor(props) {
       super(props);
 
+      {/*later use this section for the API call to populate the arrays*/}
       const farms = [];
       const growAreas = [];
       const devices = [];

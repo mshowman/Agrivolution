@@ -99,7 +99,7 @@ class SummaryDashboard extends Component{
             </Panel>
 
             <Panel>
-              <Panel.Title>List of Grow Areas</Panel.Title>
+              <Panel.Title>List of Devices</Panel.Title>
                 <Panel.Body>
                   <select className="form-control">
                             <option>---select---</option>

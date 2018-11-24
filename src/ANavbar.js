@@ -11,6 +11,7 @@ import RegisterFarm from './RegisterFarm';
 import AccountProfile from './AccountProfile';
 import SummaryDashboard from './SummaryDashboard';
 import GrowArea from './GrowArea';
+import CropCycle from './CropCycle';
 
 //change the color of the navbar
 //const navbar = {backgroundColor: '#FFFF'};
@@ -46,7 +47,7 @@ class ANavbar extends Component{
             <NavDropdown eventKey={3} title="Farms" id="basic-nav-dropdown"  >
               <MenuItem eventKey={3.1} onClick={registerFarm}>Register</MenuItem>
               <MenuItem eventKey={3.2} onClick={growArea}>Create Grow Area</MenuItem>
-              <MenuItem eventKey={3.3}>Create Crop Cycle</MenuItem>
+              <MenuItem eventKey={3.3} onClick={cropCycle}>Create Crop Cycle</MenuItem>
               <MenuItem eventKey={3.4}>Business Rules</MenuItem>
             </NavDropdown>
 
@@ -112,6 +113,10 @@ function sumDash(){
 
 function growArea(){
   ReactDOM.render(<div> <ANavbar /> <GrowArea /></div>, document.getElementById("root"));
+};
+
+function cropCycle(){
+  ReactDOM.render(<div> <ANavbar /> <CropCycle /></div>, document.getElementById("root"));
 };
 
 export default ANavbar;

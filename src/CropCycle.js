@@ -1,7 +1,42 @@
 //growarea.js
 
 import React, { Component } from 'react';
-import { PageHeader,Panel,Table,Well,Label,FormGroup,FormControl,ControlLabel} from 'react-bootstrap';
+import { PageHeader,Panel,Well} from 'react-bootstrap';
+
+
+function bRule(value){
+    const dummySentences = [
+      'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
+      'Donec hendrerit tempor tellus.',
+      'Donec pretium posuere tellus.',
+      'Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.',
+      'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
+      'Nulla posuere.',
+      'Donec vitae dolor.',
+      'Nullam tristique diam non turpis.',
+      'Cras placerat accumsan nulla.',
+      'Nullam rutrum.',
+      'Nam vestibulum accumsan nisl.'
+    ];
+
+    switch (value) {
+      case value === "Tomato":
+          this.setState({
+            sentence: dummySentences[0]
+          });
+        break;
+
+        case value === "Lettuce":
+            this.setState({
+              sentence: dummySentences[1]
+            });
+          break;
+      default:
+
+      }
+      return;
+    }
+
 
 
 class CropCycle extends Component{
@@ -11,19 +46,7 @@ class CropCycle extends Component{
       {/*using constants for now but this section will be popluated with actual data later*/}
       const farmName = "Farm #_____";
       const bRules = ["Tomato", "Lettuce","Cucumber","Carrot"];
-      const dummySentences = [
-        'Lorem ipsum dolor sit amet, consectetuer adipiscing elit.',
-        'Donec hendrerit tempor tellus.',
-        'Donec pretium posuere tellus.',
-        'Proin quam nisl, tincidunt et, mattis eget, convallis nec, purus.',
-        'Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.',
-        'Nulla posuere.',
-        'Donec vitae dolor.',
-        'Nullam tristique diam non turpis.',
-        'Cras placerat accumsan nulla.',
-        'Nullam rutrum.',
-        'Nam vestibulum accumsan nisl.'
-      ];
+
 
       {/*later use this section for the API call to populate the array*/}
       const growAreas = [];
@@ -32,8 +55,10 @@ class CropCycle extends Component{
            area: "Area "+j
          });
       }
-        this.state = {growAreas,farmName,bRules,dummySentences};
+        this.state = {growAreas,farmName,bRules};
   }
+
+
 
       render(){
           return(
@@ -69,26 +94,40 @@ class CropCycle extends Component{
               <br />
 
 
-                <form inline>
-                  <FormGroup controlId="formControlsSelect">
-                    <ControlLabel>Defaul Business Rules: </ControlLabel>
-                    <FormControl componentClass="select" placeholder="select">
-                      <select className="form-control">
+              <Panel>
+                <Panel.Title>Default Business Rules:</Panel.Title>
+                  <Panel.Body>
+                      <select className="form-control" onChange={bRule()}>
                                 <option>---select---</option>
                                   {
                                   this.state.bRules.map((br, i) =>
                                   (<option key={i} value={br}>{br}</option>))
                                   }
                       </select>
-                    </FormControl>
-                  </FormGroup>
-                </form>
+                    </Panel.Body>
+                </Panel>
+
 
               <br />
 
               <Panel bsSize="large">
-
+                <Well>
+                  {this.state.sentence}
+                </Well>
               </Panel>
+
+              <br />
+              {/*Cancel and Submit buttons*/}
+                <div className="row">
+                  <div className="col-sm-3">
+                    <input type="button" name="Cancel" value="Cancel" />
+                  </div>
+                  <div className="col-sm-3"></div>
+                  <div className="col-sm-3"></div>
+                  <div className="col-sm-3">
+                    <input type="button" name="Submit" value="Submit" />
+                  </div>
+                </div>
 
             </div>
             </div>

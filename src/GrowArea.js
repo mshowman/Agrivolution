@@ -26,7 +26,7 @@ class GrowArea extends Component{
             <div class="text-center">
               {/*header*/}
               <div className="text-center">
-              <PageHeader className="h1"> Grow Area </PageHeader>
+              <PageHeader className="h1"> Create a Grow Area </PageHeader>
             </div>
 
             <div>
@@ -44,7 +44,7 @@ class GrowArea extends Component{
 
               {/* This is the section for the Panels of choices*/}
                 <Panel>
-                  <Panel.Title>List of Farms</Panel.Title>
+                  <Panel.Title>Choose a Farm</Panel.Title>
                     <Panel.Body>
                         <select className="form-control">
                                 <option>---select---</option>
@@ -68,7 +68,7 @@ class GrowArea extends Component{
                     <div className="col-sm-3">
                       <input type="button" name="Submit" value="Submit" />
                     </div>
-                  </div>  
+                  </div>
 
 
 

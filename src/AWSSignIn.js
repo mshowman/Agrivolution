@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import ANavbar from './ANavbar';
-import Dashboard from './Dashboard';
 //import './App.css';
 import { withAuthenticator } from 'aws-amplify-react';
+import Main from './Main';
 
 class AWSSignIn extends Component {
   render() {
     return (
       <div>
         <ANavbar />
-        <Dashboard />
+        <Main />
       </div>
     )
   };

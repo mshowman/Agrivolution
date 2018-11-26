@@ -8,6 +8,7 @@ import RegisterUser from './RegisterUser';
 import RealTime from './RealTime';
 import SummaryDashboard from './SummaryDashboard';
 import AccountProfile from './AccountProfile';
+import DeviceConfiguration from './DeviceConfiguration';
 
 const notMade = () => (
     <div>
@@ -25,7 +26,7 @@ const Main = () => (
         <Route path='/create-business-rule' component={notMade}/>
         <Route path='/register-user' component={RegisterUser}/>
         <Route path='/register-device' component={notMade}/>
-        <Route path='/configure-device' component={notMade}/>
+        <Route path='/configure-device' component={DeviceConfiguration}/>
         <Route path='/control-device' component={notMade}/>
         <Route path='/calibrate-device' component={notMade}/>
         <Route path='/real-time' component={RealTime}/>

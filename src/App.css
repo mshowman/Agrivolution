@@ -48,3 +48,7 @@ h1 {
   display: table;
   clear: both;
 }
+
+.button {
+  color: green;
+}

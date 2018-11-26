@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ANavbar from './ANavbar';
-//import './App.css';
+import './App.css';
 import { withAuthenticator } from 'aws-amplify-react';
 import Main from './Main';
 

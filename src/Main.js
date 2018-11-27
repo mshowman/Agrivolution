@@ -9,6 +9,7 @@ import RealTime from './RealTime';
 import SummaryDashboard from './SummaryDashboard';
 import AccountProfile from './AccountProfile';
 import RegisterDevice from './RegisterDevice';
+import DeviceCalibrate from './DeviceCalibrate';
 
 const notMade = () => (
     <div>
@@ -28,7 +29,7 @@ const Main = () => (
         <Route path='/register-device' component={RegisterDevice}/>
         <Route path='/configure-device' component={notMade}/>
         <Route path='/control-device' component={notMade}/>
-        <Route path='/calibrate-device' component={notMade}/>
+        <Route path='/calibrate-device' component={DeviceCalibrate}/>
         <Route path='/real-time' component={RealTime}/>
         <Route path='/summary' component={SummaryDashboard}/>
         <Route path='/profile' component={AccountProfile}/>

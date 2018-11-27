@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import { Navbar, Nav, NavDropdown, NavItem } from 'react-bootstrap';
 import { IndexLinkContainer } from 'react-router-bootstrap';
-import logo from './agrivolutionLogo.png';
+import logo from './Agrivolution-Logo.svg';
 import './ANavbar.css';
 import Main from './Main';
 

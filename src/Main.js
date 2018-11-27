@@ -1,5 +1,5 @@
 import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import { Switch, Route, Redirect } from 'react-router-dom'
 import Dashboard from './Dashboard';
 import RegisterFarm from './RegisterFarm';
 import GrowArea from './GrowArea';
@@ -33,6 +33,7 @@ const Main = () => (
         <Route path='/summary' component={SummaryDashboard}/>
         <Route path='/profile' component={AccountProfile}/>
         <Route path='/subscription' component={notMade}/>
+        <Redirect to='/' />
       </Switch>
     </main>
   );

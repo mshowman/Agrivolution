@@ -15,8 +15,11 @@ var testDeviceArray = [
   {name:"Device 10",temp:60,humidity:79.5,water:9,light:75},
 ];
 
-function currentTable(array){
- return(
+function currentTable(array,check){
+    for( var a in array.name ){
+        if(a === check){
+      return(
+
       array.map((c) =>
           <tr>
             <td>{c.temp}</td>
@@ -25,7 +28,10 @@ function currentTable(array){
             <td>{c.light}</td>
           </tr>
         )
+
       );
+    }
+    }
 }
 
 class DeviceCalibrate extends Component {
@@ -34,15 +40,23 @@ class DeviceCalibrate extends Component {
         super(props);
         const devices = [];
 
+        this.handleChange = this.handleChange.bind(this);
+
         for(let k = 1; k < 11; k++){
           devices.push({
             device: "Device "+k
           });
         }
 
-        this.state = { devices};
+        this.state = {
+          devices,
+          value: ''
+        };
     }
 
+    handleChange(e) {
+        this.setState({ value: e.target.value });
+      }
     render() {
         return (
           <div className="page-header" class="text-center">
@@ -52,7 +66,7 @@ class DeviceCalibrate extends Component {
                     <Panel>
                     <FormGroup controlId="formControlsSelect">
                       <ControlLabel>Select</ControlLabel>
-                      <FormControl componentClass="select" placeholder="select">
+                      <FormControl componentClass="select" placeholder="select" onChange={this.handleChange}>
                             <option>---select---</option>
                               {
                               this.state.devices.map((d, i) =>
@@ -79,7 +93,7 @@ class DeviceCalibrate extends Component {
                      <th>Light Level</th>
                     </tr>
                   </thead>
-                  {currentTable(testDeviceArray)}
+                  {currentTable(testDeviceArray,this.state.value)}
                 </Table>
                 </span>
 

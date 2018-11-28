@@ -67,7 +67,25 @@ class DeviceCalibrate extends Component {
           <div className="page-header" class="text-center">
                     <PageHeader class="text-center">Calibrate Devices</PageHeader>
 
-                <span class="column">
+          <span class="column"></span>
+          <span class="column">
+
+              <h2>Device Status:</h2>
+              <br />
+              <Table>
+                <thead>
+                  <tr>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Water Level</th>
+                   <th>Light Level</th>
+                  </tr>
+                </thead>
+                {this.state.selectedOption.temp}
+
+              <hr />
+
+              </Table>
                     <Panel>
                       <Select
                         value={selectedOption}
@@ -77,27 +95,8 @@ class DeviceCalibrate extends Component {
                       />
 
                     </Panel>
-
-
                 </span>
-
-
-
-                <span class="column">
-                <h1>Device Status:</h1>
-                <br />
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Temperature</th>
-                      <th>Humidity</th>
-                      <th>Water Level</th>
-                     <th>Light Level</th>
-                    </tr>
-                  </thead>
-                  {this.state.selectedOption.temp}
-                </Table>
-                </span>
+                <span class="column"></span>
 
             </div>
         );

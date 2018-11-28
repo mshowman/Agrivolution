@@ -2,7 +2,6 @@
 
 
 import React, { Component } from 'react';
-import { VictoryChart, VictoryLine } from 'victory';
 import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem,Panel,FormGroup,ControlLabel,FormControl} from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 import ANavbar from './ANavbar';

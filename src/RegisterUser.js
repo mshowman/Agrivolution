@@ -1,6 +1,7 @@
 //RegisterOwner.js
 
 import React, {Component} from 'react';
+import {Link} from 'react-router-dom';
 import {FormControl, FormGroup, ControlLabel, Form, PageHeader}from 'react-bootstrap';
 import Popup from 'reactjs-popup';
 import help from './help.png';
@@ -88,7 +89,8 @@ class RegisterUser extends Component {
             </FormGroup>
             <br />
             <br />
-            <input type="button" name="Register" value="Register" />
+            <button><Link to='/'>Cancel</Link></button>
+            <button><Link to='/'>Register</Link></button>
           </Form>
 
         </div>

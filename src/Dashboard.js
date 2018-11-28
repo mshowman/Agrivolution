@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import Farm from './Farm';
 import { Panel } from 'react-bootstrap';
+import GrowAreaView from './GrowAreaView';
 
+const styles = {
+  resize: {
+    width: "50%",
+    margin: "auto"
+  }
+};
 
 class Dashboard extends Component {
   constructor(props, context) {
@@ -14,27 +20,62 @@ class Dashboard extends Component {
 
   render() {
     return (
-      <div>
-      <Panel defaultExpanded>
+      <div style={styles.resize}>
+        <Panel>
           <Panel.Heading>
-            <Panel.Title toggle>
+            <Panel.Title toggle className="text-center">
               CT - NE 4
             </Panel.Title>
           </Panel.Heading>
           <Panel.Collapse>
             <Panel.Body>
-              Grow Area #1
-              Grow Area #2
-              Grow Area #3
-              Grow Area #4
+              <GrowAreaView name="Grow Area #1" />
+              <GrowAreaView name="Grow Area #2" />
+              <GrowAreaView name="Grow Area #3" />
+              <GrowAreaView name="Grow Area #4" />
             </Panel.Body>
           </Panel.Collapse>
-      </Panel>
-      <div><Farm name="1-NE" /></div>
-      <div><Farm name="1-NW" /></div>
-      <div><Farm name="2-NW" /></div>
-      <div><Farm name="1-SE" /></div>
-    </div>
+        </Panel>
+        <Panel>
+          <Panel.Heading>
+            <Panel.Title toggle className="text-center">
+              CT - NE 7
+            </Panel.Title>
+          </Panel.Heading>
+          <Panel.Collapse>
+            <Panel.Body>
+              <GrowAreaView name="Grow Area #1" />
+              <GrowAreaView name="Grow Area #2" />
+            </Panel.Body>
+          </Panel.Collapse>
+        </Panel>
+        <Panel>
+          <Panel.Heading>
+            <Panel.Title toggle className="text-center">
+              CT - NW 2
+            </Panel.Title>
+          </Panel.Heading>
+          <Panel.Collapse>
+            <Panel.Body>
+              <GrowAreaView name="Grow Area #1" />
+              <GrowAreaView name="Grow Area #2" />
+              <GrowAreaView name="Grow Area #3" />
+            </Panel.Body>
+          </Panel.Collapse>
+        </Panel>
+        <Panel>
+          <Panel.Heading>
+            <Panel.Title toggle className="text-center">
+              NY - SW 5
+            </Panel.Title>
+          </Panel.Heading>
+          <Panel.Collapse>
+            <Panel.Body>
+              <GrowAreaView name="Grow Area #1" />
+            </Panel.Body>
+          </Panel.Collapse>
+        </Panel>
+      </div>
     );
   }
 }

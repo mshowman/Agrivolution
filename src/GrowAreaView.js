@@ -9,7 +9,7 @@ class GrowAreaView extends React.Component {
       <div>
         <div>
           <table width="40%" align="center">
-            <caption>{this.props.name}</caption>
+            <caption><h2><a href="#">{this.props.name}</a></h2></caption>
             <tr>
               <th>Device</th>
               <th>Status</th>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import {Link} from 'react-router-dom';
 import { FormControl, FormGroup, ControlLabel, Form, PageHeader } from 'react-bootstrap';
 import ANavbar from './ANavbar';
 import Dashboard from './Dashboard';
@@ -33,23 +34,14 @@ class RegisterFarm extends Component {
                                 <FormControl placeholder="Elevation" type="text" />
                             </FormGroup>
                             <br />
-                            <input type="button" name="Cancel" value="Cancel" onClick={cancel} />
-                            <input type="button" name="Register" value="Register" onClick={register} />
+                            <button><Link to='/'>Cancel</Link></button>
+                            <button><Link to='/'>Register</Link></button>
                         </div>
                     </Form>
                 </form>
             </div>
         );
     }
-}
-
-
-function cancel() {
-    ReactDOM.render(<div><ANavbar /> <Dashboard /></div>, document.getElementById("root"));
-}
-
-function register(){
-    ReactDOM.render(<div><ANavbar /> <Dashboard /></div>, document.getElementById("root"));
 }
 
 export default RegisterFarm;

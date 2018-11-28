@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 import { PageHeader,Panel,Table,Well,Label,FormGroup,FormControl,ControlLabel} from 'react-bootstrap';
 
 
-class GrowArea extends Component{
+class CreateGrowArea extends Component{
   constructor(props) {
       super(props);
 
@@ -78,4 +78,4 @@ class GrowArea extends Component{
       }
 }
 
-export default GrowArea;
+export default CreateGrowArea;

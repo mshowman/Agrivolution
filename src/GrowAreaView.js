@@ -2,17 +2,20 @@ import React from 'react';
 
 import './App.css';
 
-class Farm extends React.Component {
+class GrowAreaView extends React.Component {
 
   render() {
     return (
-      <div class="inset">
+      <div>
         <div>
           <a href="#">{this.props.name}</a>
+          <table>
+
+          </table>
         </div>
       </div>
     );
   }
 }
 
-export default Farm;
+export default GrowAreaView;

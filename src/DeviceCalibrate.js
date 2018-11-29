@@ -2,10 +2,17 @@ import React, { Component } from 'react';
 import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem,Panel,FormGroup,ControlLabel,FormControl,Table} from 'react-bootstrap';
 import Select from 'react-select';
 
+const styles = {
+  resize: {
+    width: "50%",
+    margin: "auto"
+  }
+};
+
 const options = [
-  {name:"Device 1",temp:10,humidity:12.5,water:2,light:74,label:'Device1'},
-  {name:"Device 2",temp:20,humidity:24.5,water:3,light:75,label:'Device2'},
-  {name:"Device 3",temp:30,humidity:32.5,water:5,light:76,label:'Device3'},
+  {name:"Device 1",type:"temp",temp:10,humidity:12.5,water:2,light:74,label:'Device1'},
+  {name:"Device 2",type:"temp",temp:20,humidity:24.5,water:3,light:75,label:'Device2'},
+  {name:"Device 3",type:"humidity",temp:30,humidity:32.5,water:5,light:76,label:'Device3'},
   {name:"Device 4",temp:50,humidity:64.5,water:1,light:78,label:'Device4'},
   {name:"Device 5",temp:100,humidity:89.5,water:2,light:79,label:'Device5'},
   {name:"Device 6",temp:90,humidity:22.5,water:6,light:80,label:'Device6'},
@@ -16,19 +23,9 @@ const options = [
 ];
 
 
-
 function currentTable(array,i){
 
-      return(
-        i
-          // <tr>
-          //   <td>{array[i].temp}</td>
-          //   <td>{array[i].humidity}</td>
-          //   <td>{array[i].water}</td>
-          //   <td>{array[i].light}</td>
-          // </tr>
-
-      );
+      return(i);
 
     }
 
@@ -38,7 +35,6 @@ class DeviceCalibrate extends Component {
     constructor(props) {
         super(props);
         const devices = [];
-        var value = '';
 
         for(let k = 1; k < 11; k++){
           devices.push({
@@ -48,7 +44,7 @@ class DeviceCalibrate extends Component {
 
         this.state = {
           devices,
-          value,
+          value:'',
           selectedOption:''
         };
     }
@@ -58,17 +54,18 @@ class DeviceCalibrate extends Component {
       console.log(`Option selected:`, selectedOption);
     }
 
+
+
     render() {
       const { selectedOption } = this.state;
 
         return (
 
 
-          <div className="page-header" class="text-center">
+          <div className="page-header" class="text-center" >
                     <PageHeader class="text-center">Calibrate Devices</PageHeader>
 
-          <span class="column"></span>
-          <span class="column">
+          <div style={styles.resize}>
 
               <h2>Device Status:</h2>
               <br />
@@ -81,22 +78,24 @@ class DeviceCalibrate extends Component {
                    <th>Light Level</th>
                   </tr>
                 </thead>
-                {this.state.selectedOption.temp}
 
+                <tr>
+                   <td>{this.state.selectedOption.temp}</td>
+                   <td>{this.state.selectedOption.humidity}</td>
+                   <td>{this.state.selectedOption.water}</td>
+                   <td>{this.state.selectedOption.light}</td>
+                 </tr>
               <hr />
 
               </Table>
-                    <Panel>
+
                       <Select
                         value={selectedOption}
                         onChange={this.handleChange}
                         options={options}
-                        defaulValue='Select'
                       />
 
-                    </Panel>
-                </span>
-                <span class="column"></span>
+                </div>
 
             </div>
         );

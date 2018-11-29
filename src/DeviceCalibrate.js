@@ -10,6 +10,7 @@ const styles = {
   }
 };
 
+
 const options = [
   {name:"Device 1",type:"temp",temp:10,humidity:12.5,water:2,light:74,label:'Device1'},
   {name:"Device 2",type:"temp",temp:20,humidity:24.5,water:3,light:75,label:'Device2'},
@@ -36,6 +37,7 @@ class DeviceCalibrate extends Component {
     constructor(props) {
         super(props);
         const devices = [];
+        const selectedOption = '';
 
         for(let k = 1; k < 11; k++){
           devices.push({
@@ -45,7 +47,6 @@ class DeviceCalibrate extends Component {
 
         this.state = {
           devices,
-          value:'',
           selectedOption:''
         };
     }
@@ -58,10 +59,8 @@ class DeviceCalibrate extends Component {
 
 
     render() {
-      const { selectedOption } = this.state;
 
         return (
-
 
           <div className="page-header" class="text-center" >
                     <PageHeader class="text-center">Calibrate Devices</PageHeader>
@@ -90,19 +89,19 @@ class DeviceCalibrate extends Component {
               </Table>
 
               <br />
-
+              <p>Move the slider to calibrate the device.</p>
               <DeviceSlider default={this.state.selectedOption.temp}/>
               <DeviceSlider default={this.state.selectedOption.humidity} />
               <DeviceSlider default={this.state.selectedOption.water} />
               <DeviceSlider default={this.state.selectedOption.light} />
 
+
               <br />
 
-
                       <Select
-                        value={selectedOption}
                         onChange={this.handleChange}
                         options={options}
+                        autofocus
                       />
 
                 </div>

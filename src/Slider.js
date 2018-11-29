@@ -30,16 +30,11 @@ const wrapperStyle = { width: 400, margin: 50 };
 
 
 class DeviceSlider extends Component {
-  constructor(props) {
-      super(props);
-      this.state = {props};
-  }
 
     render(){
       return(
         <div style={wrapperStyle}>
-          <p>Move the slider to calibrate the device.</p>
-          <Slider min={0} max={100} defaultValue={this.state.default} handle={handle} />
+          <Slider min={0} max={100} defaultValue={this.props.default} handle={handle} />
         </div>
       );
     }

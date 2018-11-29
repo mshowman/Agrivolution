@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem,Panel,FormGroup,ControlLabel,FormControl,Table} from 'react-bootstrap';
 import Select from 'react-select';
+import DeviceSlider from './Slider';
 
 const styles = {
   resize: {
@@ -85,9 +86,18 @@ class DeviceCalibrate extends Component {
                    <td>{this.state.selectedOption.water}</td>
                    <td>{this.state.selectedOption.light}</td>
                  </tr>
-              <hr />
 
               </Table>
+
+              <br />
+
+              <DeviceSlider default={this.state.selectedOption.temp}/>
+              <DeviceSlider default={this.state.selectedOption.humidity} />
+              <DeviceSlider default={this.state.selectedOption.water} />
+              <DeviceSlider default={this.state.selectedOption.light} />
+
+              <br />
+
 
                       <Select
                         value={selectedOption}
@@ -96,6 +106,7 @@ class DeviceCalibrate extends Component {
                       />
 
                 </div>
+
 
             </div>
         );

@@ -36,17 +36,9 @@ class DeviceCalibrate extends Component {
 
     constructor(props) {
         super(props);
-        const devices = [];
         const selectedOption = '';
 
-        for(let k = 1; k < 11; k++){
-          devices.push({
-            device: "Device "+k
-          });
-        }
-
         this.state = {
-          devices,
           selectedOption:''
         };
     }

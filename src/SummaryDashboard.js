@@ -30,20 +30,7 @@ const growAreas = [
   {area:"Area 7",label:"Area 7"}
 ];
 
-const devices = [
-  {device:"Device 1",label:"Device 1"},
-  {device:"Device 2",label:"Device 2"},
-  {device:"Device 3",label:"Device 3"},
-  {device:"Device 4",label:"Device 4"},
-  {device:"Device 5",label:"Device 5"},
-  {device:"Device 6",label:"Device 6"},
-  {device:"Device 7",label:"Device 7"},
-  {device:"Device 8",label:"Device 8"},
-  {device:"Device 9",label:"Device 9"},
-  {device:"Device 10",label:"Device 10"},
-  {device:"Device 11",label:"Device 11"},
 
-];
 var table = '';
 
 
@@ -65,11 +52,12 @@ class SummaryDashboard extends Component{
   constructor(props) {
       super(props);
       const selectedOption = '';
-      this.state = { farms,growAreas,devices, selectedOption};
+      this.state = { farms,growAreas, selectedOption};
   }
 
   handleChange = (selectedOption) => {
     this.setState({ selectedOption });
+    console.log("This is what it is",selectedOption);
   }
 
     render(){
@@ -110,16 +98,6 @@ class SummaryDashboard extends Component{
                 </Panel.Body>
             </Panel>
 
-            <Panel>
-              <Panel.Title>List of Devices</Panel.Title>
-                <Panel.Body>
-                <Select
-                    options={devices}
-                    onChange={this.handleChange}
-                />
-                </Panel.Body>
-            </Panel>
-
               </div>
               <div className="col-sm-4"></div>
           </div>
@@ -145,6 +123,7 @@ class SummaryDashboard extends Component{
                   </thead>
                 {currentTable(testarray)}
                 </Table>
+
               </Panel.Body>
             </Panel>
           </div>

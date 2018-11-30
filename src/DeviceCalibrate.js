@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem,Panel,FormGroup,ControlLabel,FormControl,Table} from 'react-bootstrap';
 import Select from 'react-select';
+import DeviceSlider from './Slider';
+
+const styles = {
+  resize: {
+    width: "50%",
+    margin: "auto"
+  }
+};
+
 
 const options = [
   {value:"Device 1",temp:10,humidity:12.5,water:2,light:74,label:'Device1'},
@@ -16,19 +25,9 @@ const options = [
 ];
 
 
-
 function currentTable(array,i){
 
-      return(
-        i
-          // <tr>
-          //   <td>{array[i].temp}</td>
-          //   <td>{array[i].humidity}</td>
-          //   <td>{array[i].water}</td>
-          //   <td>{array[i].light}</td>
-          // </tr>
-
-      );
+      return(i);
 
     }
 
@@ -37,18 +36,9 @@ class DeviceCalibrate extends Component {
 
     constructor(props) {
         super(props);
-        const devices = [];
-        var value = '';
-
-        for(let k = 1; k < 11; k++){
-          devices.push({
-            device: "Device "+k
-          });
-        }
+        const selectedOption = '';
 
         this.state = {
-          devices,
-          value,
           selectedOption:''
         };
     }
@@ -58,46 +48,56 @@ class DeviceCalibrate extends Component {
       console.log(`Option selected:`, selectedOption);
     }
 
+
+
     render() {
-      const { selectedOption } = this.state;
 
         return (
 
-
-          <div classvalue="page-header" class="text-center">
+          <div className="page-header" class="text-center" >
                     <PageHeader class="text-center">Calibrate Devices</PageHeader>
 
-                <span class="column">
-                    <Panel>
+          <div style={styles.resize}>
+
+              <h2>Device Status:</h2>
+              <br />
+              <Table>
+                <thead>
+                  <tr>
+                    <th>Temperature</th>
+                    <th>Humidity</th>
+                    <th>Water Level</th>
+                   <th>Light Level</th>
+                  </tr>
+                </thead>
+
+                <tr>
+                   <td>{this.state.selectedOption.temp}</td>
+                   <td>{this.state.selectedOption.humidity}</td>
+                   <td>{this.state.selectedOption.water}</td>
+                   <td>{this.state.selectedOption.light}</td>
+                 </tr>
+
+              </Table>
+
+              <br />
+              <p>Move the slider to calibrate the device.</p>
+              <DeviceSlider default={this.state.selectedOption.temp}/>
+              <DeviceSlider default={this.state.selectedOption.humidity} />
+              <DeviceSlider default={this.state.selectedOption.water} />
+              <DeviceSlider default={this.state.selectedOption.light} />
+
+
+              <br />
+
                       <Select
-                        value={selectedOption}
                         onChange={this.handleChange}
                         options={options}
-                        defaulValue='Select'
+                        autofocus
                       />
 
-                    </Panel>
+                </div>
 
-
-                </span>
-
-
-
-                <span class="column">
-                <h1>Device Status:</h1>
-                <br />
-                <Table>
-                  <thead>
-                    <tr>
-                      <th>Temperature</th>
-                      <th>Humidity</th>
-                      <th>Water Level</th>
-                     <th>Light Level</th>
-                    </tr>
-                  </thead>
-                  {this.state.selectedOption.temp}
-                </Table>
-                </span>
 
             </div>
         );

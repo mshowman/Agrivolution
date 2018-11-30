@@ -17,8 +17,8 @@ class CreateGrowArea extends Component {
       });
     }
 
-    const farmChoices = [{ fvalue: 1, label: "Farm 1" }, { fvalue: 2, label: "Farm 2" }, { fvalue: 3, label: "Farm 3" }];
-    const growAreaChoices = [{ gvalue: 1, label: "Grow Area 1" }, { gvalue: 2, label: "Grow Area 2" }, { gvalue: 3, label: "Grow Area 3" }];
+    const farmChoices = [{ value: 1, label: "Farm 1" }, { value: 2, label: "Farm 2" }, { value: 3, label: "Farm 3" }];
+    const growAreaChoices = [{ value: 1, label: "Grow Area 1" }, { value: 2, label: "Grow Area 2" }, { value: 3, label: "Grow Area 3" }];
 
     this.toggle = this.toggle.bind(this);
     this.state = {

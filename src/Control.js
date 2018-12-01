@@ -1,12 +1,24 @@
 //Control.js
 
 import React, { Component } from 'react';
-import { PageHeader,Panel,Table, Col,Row} from 'react-bootstrap';
+import { PageHeader,Panel,Table, Col,Row,Grid} from 'react-bootstrap';
 import Select from 'react-select';
 import Switch from "react-switch";
 
 
-const devices=[];
+const devices=[
+  {name:"Device 1",type:"temp",temp:10,humidity:12.5,water:2,light:74,label:'Device1'},
+  {name:"Device 2",type:"temp",temp:20,humidity:24.5,water:3,light:75,label:'Device2'},
+  {name:"Device 3",type:"humidity",temp:30,humidity:32.5,water:5,light:76,label:'Device3'},
+  {name:"Device 4",temp:50,humidity:64.5,water:1,light:78,label:'Device4'},
+  {name:"Device 5",temp:100,humidity:89.5,water:2,light:79,label:'Device5'},
+  {name:"Device 6",temp:90,humidity:22.5,water:6,light:80,label:'Device6'},
+  {name:"Device 7",temp:80,humidity:52.5,water:7,light:77,label:'Device7'},
+  {name:"Device 8",temp:70,humidity:16.5,water:8,light:76,label:'Device8'},
+  {name:"Device 9",temp:60,humidity:79.5,water:9,light:75,label:'Device9'},
+  {name:"Device 10",temp:60,humidity:79.5,water:9,light:75,label:'Device10'},
+];
+
 const styles = {
   resize: {
     width: "50%",
@@ -19,13 +31,6 @@ class Control extends Component{
   constructor(props){
     super(props);
 
-    for (let i=1;i<11;i++){
-      devices.push(
-        {name:"Device " + i,
-        label:"Device " + i
-        }
-      );
-
       this.state = {
           devices,
           checked: false
@@ -33,10 +38,9 @@ class Control extends Component{
       this.handleChange = this.handleChange.bind(this);
 
     }
-}
 
 
-handleChange(checked) {
+handleChange( checked) {
   this.setState({ checked });
 }
 
@@ -48,57 +52,45 @@ handleChange(checked) {
 
       <div style={styles.resize}>
 
-      <Col md={6} lg={6} mdPull={6} lg={6}>
-          <Panel>
-            devices.forEach(function(device){
+
+        {
+          this.state.devices.map((device) =>
+            (
+              <div>
+                <Grid>
                 <Row>
-                  <Col>device.name</Col>
+                  <Col>{device.name}</Col>
                   <Col>
-                    <label htmlFor="normal-switch">
-                      <span>Off   On</span>
-                      <Switch
-                        onChange={this.handleChange}
-                        checked={this.state.checked}
-                        id="normal-switch"
-                      />
-                    </label>
+                    <Switch
+                      onChange={this.handleChange}
+                      checked={this.state.checked}
+                      id="normal-switch"
+                    />
+                    <span>Off   On</span>
                   </Col>
                 </Row>
-              });
+                </Grid>
+            </div>
+            )
+          )
+        }
 
-
-          </Panel>
-
-        </Col>
-
-
-        <Col md={6} lg={6} mdPull={6} lg={6}>
+        <Col >
           <h2>Device Status:</h2>
           <br />
           <Table>
             <thead>
               <tr>
-                <th>Temperature</th>
-                <th>Humidity</th>
-                <th>Water Level</th>
-               <th>Light Level</th>
+                <th>Device Type</th>
+                <th>Value</th>
               </tr>
             </thead>
-
-          {/*  <tr>
-               <td>{this.state.selectedOption.temp}</td>
-               <td>{this.state.selectedOption.humidity}</td>
-               <td>{this.state.selectedOption.water}</td>
-               <td>{this.state.selectedOption.light}</td>
-             </tr>
-            */}
-
           </Table>
+        </Col>
 
-          </Col>
-        </div>
       </div>
 
+    </div>
     );
   }
 

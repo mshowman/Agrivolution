@@ -44,15 +44,7 @@ class DeviceSlider extends Component {
     render(){
       return(
         <div style={wrapperStyle}>
-<<<<<<< HEAD
-<<<<<<< HEAD
           <Slider min={0} max={100} defaultValue={this.props.status} value={this.props.status} handle={handle} />
-=======
-          <Slider min={0} max={100} defaultValue={this.props.status} handle={handle} />
->>>>>>> slider issues
-=======
-          <Slider min={0} max={100} defaultValue={this.props.status} value={this.props.status} handle={handle} />
->>>>>>> starting the move
         </div>
       );
     }

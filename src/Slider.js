@@ -31,10 +31,20 @@ const wrapperStyle = { width: 400, margin: 50 };
 
 class DeviceSlider extends Component {
 
+  constructor(props){
+    super(props);
+
+    this.state = {
+      status: this.props.status,
+    }
+
+    console.log("the value for the slider is: ", this.props.status)
+  }
+
     render(){
       return(
         <div style={wrapperStyle}>
-          <Slider min={0} max={100} defaultValue={this.props.default} handle={handle} />
+          <Slider min={0} max={100} defaultValue={this.props.status} handle={handle} />
         </div>
       );
     }

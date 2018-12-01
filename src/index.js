@@ -8,12 +8,17 @@ import * as serviceWorker from './serviceWorker';
 import Amplify from 'aws-amplify';
 
 import config from './aws-exports';
+import ANavbar from './ANavbar';
+import Main from './Main';
 
 Amplify.configure(config)
 
 ReactDOM.render((
     <BrowserRouter>
-        <AWSSignIn />
+        <div>
+            <ANavbar />
+            <Main />
+        </div>
     </BrowserRouter>), document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

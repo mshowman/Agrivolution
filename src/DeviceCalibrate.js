@@ -49,8 +49,6 @@ class DeviceCalibrate extends Component {
       console.log(`Option selected:`, selectedOption);
     }
 
-
-
     render() {
         return (
 

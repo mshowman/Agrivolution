@@ -36,26 +36,26 @@ class DeviceCalibrate extends Component {
 
     constructor(props) {
         super(props);
-        const selectedOption = '';
 
         this.state = {
-          selectedOption:''
+          selectedOption: options[0],
+          refresh: 0,
         };
     }
 
-    handleChange = (selectedOption) => {
+    handleChange = (selectedOption, refresh = 0) => {
       this.setState({ selectedOption });
+      this.setState({ refresh });
       console.log(`Option selected:`, selectedOption);
     }
 
 
 
     render() {
-
         return (
 
-          <div className="page-header" class="text-center" >
-                    <PageHeader class="text-center">Calibrate Devices</PageHeader>
+          <div className="page-header text-center" >
+                    <PageHeader className="text-center">Calibrate Devices</PageHeader>
 
           <div style={styles.resize}>
 
@@ -70,22 +70,23 @@ class DeviceCalibrate extends Component {
                    <th>Light Level</th>
                   </tr>
                 </thead>
-
+                <tbody>
                 <tr>
                    <td>{this.state.selectedOption.temp}</td>
                    <td>{this.state.selectedOption.humidity}</td>
                    <td>{this.state.selectedOption.water}</td>
                    <td>{this.state.selectedOption.light}</td>
                  </tr>
-
+                </tbody>
               </Table>
 
               <br />
               <p>Move the slider to calibrate the device.</p>
-              <DeviceSlider default={this.state.selectedOption.temp}/>
-              <DeviceSlider default={this.state.selectedOption.humidity} />
-              <DeviceSlider default={this.state.selectedOption.water} />
-              <DeviceSlider default={this.state.selectedOption.light} />
+              
+              <DeviceSlider status={this.state.selectedOption.temp} />
+              <DeviceSlider status={this.state.selectedOption.humidity} />
+              <DeviceSlider status={this.state.selectedOption.water} />
+              <DeviceSlider status={this.state.selectedOption.light} />
 
 
               <br />

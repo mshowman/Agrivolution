@@ -17,30 +17,10 @@ class CreateGrowArea extends Component {
       });
     }
 
-    const farmChoices = [{ value: 1, label: "Farm 1" }, { value: 2, label: "Farm 2" }, { value: 3, label: "Farm 3" }];
-    const growAreaChoices = [{ value: 1, label: "Grow Area 1" }, { value: 2, label: "Grow Area 2" }, { value: 3, label: "Grow Area 3" }];
-
     this.toggle = this.toggle.bind(this);
     this.state = {
       farms,
-      showModal: false,
-      selectedFarmOption: null,
-      selectedGrowAreaOption: null,
-      farmChoices,
-      growAreaChoices
     };
-  }
-
-  toggle() {
-    this.setState({ showModal: !this.state.showModal });
-  }
-
-  handleFarmChange = (selectedFarmOption) => {
-    this.setState({ selectedFarmOption });
-  }
-
-  handleGrowAreaChange = (selectedGrowAreaOption) => {
-    this.setState({ selectedGrowAreaOption });
   }
 
   render() {
@@ -49,40 +29,9 @@ class CreateGrowArea extends Component {
         {/*header*/}
         <div className="text-center">
           <PageHeader className="h1"> Create a Grow Area </PageHeader>
-          <Button onClick={this.toggle}>Report Yield</Button>
-          <div>
-            <Modal show={this.state.showModal}>
-              <Modal.Header>
-                <Modal.Title>Report Yield for Grow Area</Modal.Title>
-              </Modal.Header>
-              <Modal.Body>
-                <h4>Select Farm</h4>
-                <Select
-                  value={this.state.selectedFarmOption}
-                  onChange={this.handleFarmChange}
-                  options={this.state.farmChoices}
-                  defaulValue='--Select--'
-                />
-                <br />
-                <h4>Select Grow Area</h4>
-                <Select
-                  value={this.state.selectedGrowAreaOption}
-                  onChange={this.handleGrowAreaChange}
-                  options={this.state.growAreaChoices}
-                  defaulValue='--Select--'
-                />
-                <br />
-                <h4>Yield:</h4><input type="text" name="yield" /><br />
-              </Modal.Body>
-              <Modal.Footer>
-                <Button onClick={this.toggle}>Close</Button>
-              </Modal.Footer>
-            </Modal>
-          </div>
         </div>
 
         <div>
-
           <Well bsSize="large">
             <form>
               <FormGroup controlId="formControlsText">

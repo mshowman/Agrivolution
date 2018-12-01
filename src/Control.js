@@ -1,7 +1,7 @@
 //Control.js
 
 import React, { Component } from 'react';
-import { PageHeader, Panel, Table, Col, Row, Grid } from 'react-bootstrap';
+import { PageHeader, Panel, Table, Col, Row, Grid, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
 import Select from 'react-select';
 import Switch from "react-switch";
 
@@ -32,26 +32,47 @@ class SwitchButton extends Component {
 
     this.state = {
       device: this.props.device,
-      checked: false
+      checked: false,
+      devices: this.props.devicesArray,
+      masterStatus: false,
     };
+
     this.handleChange = this.handleChange.bind(this);
 
   }
 
   handleChange(checked) {
-    this.setState({ checked });
+    if (this.state.device.value === "Master Switch") {
+      this.setState({ checked: checked });
+      this.setState({ masterStatus: checked })
+    } else {
+      this.setState({ checked });
+    }
   }
+
+  createButtonType() {
+    if (this.state.masterStatus === true) {
+      return (<Switch
+        onChange={this.handleChange}
+        checked={false}
+        id="normal-switch"
+      />);
+    } else {
+      return (<Switch
+        onChange={this.handleChange}
+        checked={this.state.checked}
+        id="normal-switch"
+      />);
+    }
+  }
+
   render() {
     return (
       <Grid>
         <Row>
           <Col sm={6} md={3}>{this.state.device.value}</Col>
           <Col>
-            <Switch
-              onChange={this.handleChange}
-              checked={this.state.checked}
-              id="normal-switch"
-            />
+            {this.createButtonType()}
             <span>Off   On</span>
           </Col>
         </Row>
@@ -78,11 +99,11 @@ class Control extends Component {
 
         <div style={styles.resize}>
 
-
+          <SwitchButton devicesArray={this.state.devices} device={{ value: "Master Switch", label: 'Master' }} />
           {
-            this.state.devices.map((device) =>
+            this.state.devices.map((device, i) =>
               (
-                  <SwitchButton device={device} />
+                <SwitchButton device={device} />
               )
             )
           }

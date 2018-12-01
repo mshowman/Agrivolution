@@ -51,24 +51,24 @@ class AccountProfile extends Component {
                     </div>
                     <hr />
                     <div class="text-center">
-                        <FormGroup controlId="formControlsText">
+                        {/*<FormGroup controlId="formControlsText">
                             <ControlLabel>Subscription Status:</ControlLabel>
                             <FormControl placeholder="Active" type="label" />
                         </FormGroup>
-                    </div>
+        </div>
                 </Form>
                 <br />
                 <a href="#">Renew Subscription</a>
                 <br />
                 <a href="#">Upgrade Account</a>
-                <hr />
-                <a href="#">Delete Account</a>
+        <hr />*/}
+                        <a href="#">Delete Account</a>
 
-            </div>
-        );
-    }
-
-
-}
-
-export default AccountProfile;
+                    </div></Form></div>
+                    );
+                }
+            
+            
+            }
+            
+            export default AccountProfile;

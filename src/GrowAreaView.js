@@ -50,6 +50,7 @@ class GrowAreaView extends React.Component {
         <div>
           <table width="40%" align="center">
             <caption>
+            <h4>{this.props.name}</h4>
               <Button bsStyle="success" onClick={this.toggle}>Perform an Action</Button>
               <Button onClick={() => this.toggle("yield")}>Report Yield</Button>
             </caption>

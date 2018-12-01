@@ -66,7 +66,7 @@ class ANavbar extends Component {
 
               <NavDropdown eventKey={7} title="Account" id="basic-nav-dropdown">
                 <IndexLinkContainer to='/profile'><NavItem>Profile</NavItem></IndexLinkContainer>
-                <IndexLinkContainer to='/subscription'><NavItem>Subscription</NavItem></IndexLinkContainer>
+                {/*<IndexLinkContainer to='/subscription'><NavItem>Subscription</NavItem></IndexLinkContainer>*/}
               </NavDropdown>
 
             </Nav>

@@ -17,7 +17,6 @@ class CreateGrowArea extends Component {
       });
     }
 
-    this.toggle = this.toggle.bind(this);
     this.state = {
       farms,
     };

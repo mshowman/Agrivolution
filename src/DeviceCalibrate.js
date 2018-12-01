@@ -38,7 +38,7 @@ class DeviceCalibrate extends Component {
     super(props);
 
     this.state = {
-      selectedOption: null,
+      selectedOption: "",
       refresh: 0,
     };
   }

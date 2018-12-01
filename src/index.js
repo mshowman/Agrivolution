@@ -13,7 +13,7 @@ import config from './aws-exports';
 import ANavbar from './ANavbar';
 import Main from './Main';
 
-Amplify.configure(config)
+//Amplify.configure(config)
 
 ReactDOM.render((
     <BrowserRouter>

@@ -50,8 +50,8 @@ class GrowAreaView extends React.Component {
         <div>
           <table width="40%" align="center">
             <caption>
-              <Button bsStyle="success" onClick={this.toggle}>{this.props.name}</Button>
-              <Button onClick={this.toggle("yield")}>Report Yield</Button>
+              <Button bsStyle="success" onClick={this.toggle}>Perform an Action</Button>
+              <Button onClick={() => this.toggle("yield")}>Report Yield</Button>
             </caption>
             <tbody>
               <tr>
@@ -98,7 +98,7 @@ class GrowAreaView extends React.Component {
               <h4>Yield:</h4><input type="text" name="yield" /><br />
             </Modal.Body>
             <Modal.Footer>
-              <Button onClick={this.toggle}>Close</Button>
+              <Button onClick={() => this.toggle("yield")}>Close</Button>
             </Modal.Footer>
           </Modal>
         </div>

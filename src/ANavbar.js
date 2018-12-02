@@ -50,6 +50,7 @@ class ANavbar extends Component {
 
               <NavDropdown eventKey={4} title="Users" id="basic-nav-dropdown">
                 <IndexLinkContainer to='/register-user'><NavItem>Register</NavItem></IndexLinkContainer>
+                <IndexLinkContainer to='/assign-user'><NavItem>Assign User</NavItem></IndexLinkContainer>
               </NavDropdown>
 
               <NavDropdown eventKey={5} title="Devices" id="basic-nav-dropdown">

@@ -5,6 +5,7 @@ import RegisterFarm from './RegisterFarm';
 import CreateGrowArea from './CreateGrowArea';
 import CropCycle from './CropCycle';
 import RegisterUser from './RegisterUser';
+import AssignUser from './AssignUser';
 import RealTime from './RealTime';
 import SummaryDashboard from './SummaryDashboard';
 import AccountProfile from './AccountProfile';
@@ -27,6 +28,7 @@ const Main = () => (
       <Route path='/create-crop-cycle' component={CropCycle} />
       <Route path='/create-business-rule' component={notMade} />
       <Route path='/register-user' component={RegisterUser} />
+      <Route path='/assign-user' component={AssignUser} />
       <Route path='/register-device' component={RegisterDevice} />
       <Route path='/configure-device' component={notMade} />
       <Route path='/control-device' component={Control} />

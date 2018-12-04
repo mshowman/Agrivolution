@@ -5,6 +5,7 @@ import { PageHeader, Panel, Table, Col, Row, Grid, ToggleButton, ToggleButtonGro
 import Select from 'react-select';
 import Switch from "react-switch";
 
+var d2 = '';
 
 const devices = [
   { value: "Device 1", type: "Temperature", reading: 10, label: 'Device1', status: false },
@@ -83,16 +84,36 @@ class SwitchButton extends Component {
   }
 }
 
+
+
 class Control extends Component {
   constructor(props) {
     super(props);
 
+
     this.state = {
       devices,
       masterSwitch: false,
+      d2,
     };
 
   }
+
+  valueOfTrue() {
+    this.state.devices.map((d) =>
+      (if (d.status === true) {
+      return (
+        <tr>
+          <td>{d.value}</td>
+          <td>{d.type}</td>
+          <td>{d.reading}</td>
+        </tr>
+      );
+      )
+    )
+    }
+  }
+
 
   render() {
     if (this.state.masterSwitch === false) {
@@ -123,18 +144,7 @@ class Control extends Component {
                     <th>Value</th>
                   </tr>
 
-                  {
-                    this.state.devices.map((device) =>
-                      (
-                        <tr>
-                          <td>{device.value}</td>
-                          <td>{device.type}</td>
-                          <td>{device.reading}</td>
-                        </tr>
-
-                      )
-                    )
-                  }
+                  {valueOfTrue}
 
                 </thead>
               </Table>

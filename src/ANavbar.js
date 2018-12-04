@@ -55,7 +55,7 @@ class ANavbar extends Component {
 
               <NavDropdown eventKey={5} title="Devices" id="basic-nav-dropdown">
                 <IndexLinkContainer to='/register-device'><NavItem>Register</NavItem></IndexLinkContainer>
-                <IndexLinkContainer to='/configure-device'><NavItem>Configuration</NavItem></IndexLinkContainer>
+                {/*<IndexLinkContainer to='/configure-device'><NavItem>Configuration</NavItem></IndexLinkContainer>*/}
                 <IndexLinkContainer to='/control-device'><NavItem>Control</NavItem></IndexLinkContainer>
                 <IndexLinkContainer to='/calibrate-device'><NavItem>Calibrate</NavItem></IndexLinkContainer>
               </NavDropdown>

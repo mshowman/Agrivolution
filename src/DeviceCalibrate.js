@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem,Panel,FormGroup,ControlLabel,FormControl,Table} from 'react-bootstrap';
+import { PageHeader,Table,} from 'react-bootstrap';
 import Select from 'react-select';
 import DeviceSlider from './Slider';
 
@@ -23,13 +23,6 @@ const options = [
   {name:"Device 9",temp:60,humidity:79.5,water:9,light:75,label:'Device9'},
   {name:"Device 10",temp:60,humidity:79.5,water:9,light:75,label:'Device10'},
 ];
-
-
-function currentTable(array,i){
-
-      return(i);
-
-    }
 
 
 class DeviceCalibrate extends Component {

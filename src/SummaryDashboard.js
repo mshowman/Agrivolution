@@ -4,14 +4,14 @@ import React, { Component } from 'react';
 import { PageHeader,Panel,Table} from 'react-bootstrap';
 import Select from 'react-select';
 
-{/*later use this section for the API call to populate the arrays*/}
+/*later use this section for the API call to populate the arrays*/
 var testarray = [
   {crop:"Tomato",season:"Fall 2018",yield:10,brule:1},
   {crop:"Lettuce",season:"Fall 2018",yield:50,brule:2},
   {crop:"Cucumber",season:"Fall 2018",yield:100,brule:3},
   {crop:"Carrot",season:"Fall 2018",yield:500,brule:4}
 ];
-{/*later use this section for the API call to populate the arrays*/}
+/*later use this section for the API call to populate the arrays*/
 const farms = [
   {owner: "Ann ", name: "Farm 1",label:"Farm 1"},
   {owner: "Bob ", name: "Farm 2",label:"Farm 2"},
@@ -29,9 +29,6 @@ const growAreas = [
   {area:"Area 6",label:"Area 6"},
   {area:"Area 7",label:"Area 7"}
 ];
-
-
-var table = '';
 
 
 function currentTable(array){

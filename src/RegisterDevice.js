@@ -2,7 +2,7 @@
 
 
 import React, { Component } from 'react';
-import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem,Panel,FormGroup,ControlLabel,FormControl} from 'react-bootstrap';
+import {PageHeader,Panel,FormGroup,ControlLabel,FormControl} from 'react-bootstrap';
 import ReactDOM from 'react-dom';
 import ANavbar from './ANavbar';
 import Dashboard from './Dashboard';
@@ -12,7 +12,7 @@ class RegisterDevice extends Component {
 
     constructor(props) {
         super(props);
-        {/*later use this section for the API call to populate the arrays*/}
+        /*later use this section for the API call to populate the arrays*/
         const farms = [];
         var table = '';
 

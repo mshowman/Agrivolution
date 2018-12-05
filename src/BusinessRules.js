@@ -9,6 +9,7 @@ import Switch from "react-switch";
 
 class BusinessRules extends Component {
 
+
     render(){
         return(
             

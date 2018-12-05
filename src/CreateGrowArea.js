@@ -1,7 +1,7 @@
 //growarea.js
 
 import React, { Component } from 'react';
-import { PageHeader,Panel,Table,Well,Label,FormGroup,FormControl,ControlLabel} from 'react-bootstrap';
+import { PageHeader,Panel,Well,FormGroup,FormControl,ControlLabel} from 'react-bootstrap';
 
 
 class CreateGrowArea extends Component{
@@ -9,7 +9,7 @@ class CreateGrowArea extends Component{
       super(props);
 
       const growAreaName = "Grow Area 1";
-      {/*later use this section for the API call to populate the array*/}
+      /*later use this section for the API call to populate the array*/
       const farms = [];
       for (let i = 1; i <6 ; i++) {
         farms.push({

@@ -49,7 +49,8 @@ class SwitchButton extends Component {
       this.setState({ masterSwitch: checked })
     } else {
       this.setState({ checked })
-      this.setState({ status: checked });
+      this.setState({ status: this.status });
+      this.forceUpdate();
     }
   }
 
@@ -100,18 +101,17 @@ class Control extends Component {
   }
 
   valueOfTrue() {
-    this.state.devices.map((d) =>
-      (if (d.status === true) {
-      return (
+   return(
+    this.state.devices
+      .filter(d => d.status === true)
+      .map(d2 =>
         <tr>
-          <td>{d.value}</td>
-          <td>{d.type}</td>
-          <td>{d.reading}</td>
-        </tr>
+          <td>{d2.value}</td>
+          <td>{d2.type}</td>
+          <td>{d2.reading}</td>
+        </tr>)
       );
-      )
-    )
-    }
+      
   }
 
 
@@ -143,10 +143,8 @@ class Control extends Component {
                     <th>Device Type</th>
                     <th>Value</th>
                   </tr>
-
-                  {valueOfTrue}
-
                 </thead>
+                  <tbody>{this.valueOfTrue()}</tbody>
               </Table>
             </Col>
 

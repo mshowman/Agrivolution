@@ -1,8 +1,7 @@
 //Control.js
 
 import React, { Component } from 'react';
-import { PageHeader, Panel, Table, Col, Row, Grid, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
-import Select from 'react-select';
+import { PageHeader, Table, Col, Row, Grid, } from 'react-bootstrap';
 import Switch from "react-switch";
 
 var d2 = '';

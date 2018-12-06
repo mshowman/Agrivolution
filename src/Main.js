@@ -11,6 +11,8 @@ import AccountProfile from './AccountProfile';
 import RegisterDevice from './RegisterDevice';
 import DeviceCalibrate from './DeviceCalibrate';
 import Control from './Control';
+import BusinessRules from './BusinessRules';
+
 
 const notMade = () => (
   <div>
@@ -25,7 +27,7 @@ const Main = () => (
       <Route path='/register-farm' component={RegisterFarm} />
       <Route path='/create-grow-area' component={CreateGrowArea} />
       <Route path='/create-crop-cycle' component={CropCycle} />
-      <Route path='/create-business-rule' component={notMade} />
+      <Route path='/create-business-rule' component={BusinessRules} />
       <Route path='/register-user' component={RegisterUser} />
       <Route path='/register-device' component={RegisterDevice} />
       <Route path='/configure-device' component={notMade} />

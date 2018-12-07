@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
+<<<<<<< HEAD
 
+=======
+>>>>>>> copying frontend branch to master
 import { DropdownButton, Dropdown, PageHeader, ButtonToolbar, MenuItem, Panel, FormGroup, ControlLabel, FormControl, Table } from 'react-bootstrap';
 import Select from 'react-select';
 import DeviceSlider from './Slider';
@@ -26,6 +29,16 @@ const options = [
 ];
 
 
+<<<<<<< HEAD
+=======
+function currentTable(array, i) {
+
+  return (i);
+
+}
+
+
+>>>>>>> copying frontend branch to master
 class DeviceCalibrate extends Component {
 
   constructor(props) {

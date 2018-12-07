@@ -2,7 +2,11 @@
 
 
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import {PageHeader,Panel,FormGroup,ControlLabel,FormControl} from 'react-bootstrap';
+=======
+import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem,Panel,FormGroup,ControlLabel,FormControl} from 'react-bootstrap';
+>>>>>>> copying frontend branch to master
 import ReactDOM from 'react-dom';
 import ANavbar from './ANavbar';
 import Dashboard from './Dashboard';
@@ -12,7 +16,11 @@ class RegisterDevice extends Component {
 
     constructor(props) {
         super(props);
+<<<<<<< HEAD
         /*later use this section for the API call to populate the arrays*/
+=======
+        {/*later use this section for the API call to populate the arrays*/}
+>>>>>>> copying frontend branch to master
         const farms = [];
         var table = '';
 

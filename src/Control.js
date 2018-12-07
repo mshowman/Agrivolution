@@ -1,12 +1,21 @@
 //Control.js
 
 import React, { Component } from 'react';
+<<<<<<< HEAD
 import { PageHeader, Table, Col, Row, Grid, } from 'react-bootstrap';
+=======
+import { PageHeader, Panel, Table, Col, Row, Grid, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
+import Select from 'react-select';
+>>>>>>> copying frontend branch to master
 import Switch from "react-switch";
 
 var d2 = '';
 
+<<<<<<< HEAD
 var devices = [
+=======
+const devices = [
+>>>>>>> copying frontend branch to master
   { value: "Device 1", type: "Temperature", reading: 10, label: 'Device1', status: false },
   { value: "Device 2", type: "Temperature", reading: 20, label: 'Device2', status: true },
   { value: "Device 3", type: "Humidity", reading: 32.5, label: 'Device3', status: true },
@@ -48,9 +57,14 @@ class SwitchButton extends Component {
       this.setState({ masterSwitch: checked })
     } else {
       this.setState({ checked })
+<<<<<<< HEAD
       this.setState({ status: this.checked });
       
       return this.status;
+=======
+      this.setState({ status: this.status });
+      this.forceUpdate();
+>>>>>>> copying frontend branch to master
     }
   }
 

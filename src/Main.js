@@ -12,8 +12,11 @@ import AccountProfile from './AccountProfile';
 import RegisterDevice from './RegisterDevice';
 import DeviceCalibrate from './DeviceCalibrate';
 import Control from './Control';
+<<<<<<< HEAD
 import BusinessRules from './BusinessRules';
 
+=======
+>>>>>>> copying frontend branch to master
 
 const notMade = () => (
   <div>
@@ -28,7 +31,11 @@ const Main = () => (
       <Route path='/register-farm' component={RegisterFarm} />
       <Route path='/create-grow-area' component={CreateGrowArea} />
       <Route path='/create-crop-cycle' component={CropCycle} />
+<<<<<<< HEAD
       <Route path='/create-business-rule' component={BusinessRules} />
+=======
+      <Route path='/create-business-rule' component={notMade} />
+>>>>>>> copying frontend branch to master
       <Route path='/register-user' component={RegisterUser} />
       <Route path='/assign-user' component={AssignUser} />
       <Route path='/register-device' component={RegisterDevice} />
@@ -39,7 +46,10 @@ const Main = () => (
       <Route path='/summary' component={SummaryDashboard} />
       <Route path='/profile' component={AccountProfile} />
       <Route path='/subscription' component={notMade} />
+<<<<<<< HEAD
       <Route component={notMade} />
+=======
+>>>>>>> copying frontend branch to master
     </Switch>
   </main>
 );

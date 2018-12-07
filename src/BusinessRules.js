@@ -30,11 +30,25 @@ const alertOptions = [
     {value: "Text Message", label: "Text Message" }
 ];
 
+var times = [];
 
 
 class BusinessRules extends Component {
 
+constructor(){
+    super();
 
+    var quarterHours = ["00", "15", "30", "45"];
+    for(var i = 0; i < 24; i++) {
+        for (var j = 0; j < 4; j++) {
+            var time = i + ":" + quarterHours[j];
+            if (i < 10) {
+                time = "0" + time;
+            }
+            times.push({value: time, label: time,});
+        }
+    }
+}
     render() {
         return (
             <div class="text-center">
@@ -151,7 +165,23 @@ class BusinessRules extends Component {
                                 onChange={this.handleChange}
                             />
                         </Col>
-                        
+                    </Row>
+
+                    <Row>
+                        <Col sm={8} md={6}>
+                            <ControlLabel> Start Time:</ControlLabel>
+                            <Select
+                                options={times}
+                                onChange={this.handleChange}
+                            />
+                        </Col>
+                        <Col sm={8} md={6}>
+                            <ControlLabel> End Time:</ControlLabel>
+                            <Select
+                                options={times}
+                                onChange={this.handleChange}
+                            />
+                        </Col>
                     </Row>
                 </Grid>
 

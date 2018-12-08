@@ -37,6 +37,7 @@ const Main = () => (
       <Route path='/summary' component={SummaryDashboard} />
       <Route path='/profile' component={AccountProfile} />
       <Route path='/subscription' component={notMade} />
+      <Route component={notMade} />
     </Switch>
   </main>
 );

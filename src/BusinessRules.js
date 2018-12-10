@@ -3,7 +3,7 @@
 import React, { Component } from 'react';
 import { PageHeader, Panel, Col, Row, Grid, FormGroup, ControlLabel, FormControl, Button, Well, } from 'react-bootstrap';
 import Select from 'react-select';
-import { Form, Text } from 'informed';
+import { Form, } from 'informed';
 
 
 /*later use this section for the API call to populate the arrays*/
@@ -28,6 +28,12 @@ const growAreas = [
 const alertOptions = [
     {value: "Email" , label: "Email"},
     {value: "Text Message", label: "Text Message" }
+];
+const types = [
+    { value: "Temperature Gauge", label: "Temperature Gauge" },
+    { value: "Humitidy Gauge", label: "Humitidy Gauge" },
+    { value: "Light Gauge", label: "Light Gauge" },
+    { value: "Water Level Gauge", label: "Water Level Gauge"},
 ];
 
 var times = [];
@@ -135,14 +141,12 @@ constructor(){
                             </Form>
                         </Col>
                         <Col sm={6} md={4}>
-                            <Form>
-                                <FormGroup controlId="devicetype">
-                                    <ControlLabel>Device Type:</ControlLabel>{' '}
-                                    <FormControl type="text" placeholder="Type" />
-                                </FormGroup>{' '}
-                            </Form>
+                            <ControlLabel>Device Type:</ControlLabel>
+                            <Select
+                                options={types}
+                                onChange={this.handleChange}
+                            />     
                         </Col>
-
                     </Row>
 
 
@@ -150,7 +154,7 @@ constructor(){
                     <br />
 
                     <Row>
-                        <Col sm={6} md={4}>
+                        <Col sm={8} md={6}>
                             <Form inline>
                                 <FormGroup controlId="alertvalue">
                                     <ControlLabel>Alert Value:</ControlLabel>{' '}
@@ -158,7 +162,7 @@ constructor(){
                                 </FormGroup>{' '}
                             </Form>
                         </Col>
-                        <Col sm={6} md={4}>
+                        <Col sm={8} md={6}>
                             <ControlLabel> Alert Options:</ControlLabel>
                             <Select
                                 options={alertOptions}

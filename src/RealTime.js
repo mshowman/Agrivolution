@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { VictoryChart, VictoryLine } from 'victory';
-import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem} from 'react-bootstrap';
+import { DropdownButton,PageHeader, ButtonToolbar,MenuItem} from 'react-bootstrap';
 
 class RealTime extends Component {
 

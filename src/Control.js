@@ -1,13 +1,12 @@
 //Control.js
 
 import React, { Component } from 'react';
-import { PageHeader, Panel, Table, Col, Row, Grid, ToggleButton, ToggleButtonGroup } from 'react-bootstrap';
-import Select from 'react-select';
+import { PageHeader, Table, Col, Row, Grid, } from 'react-bootstrap';
 import Switch from "react-switch";
 
 var d2 = '';
 
-const devices = [
+var devices = [
   { value: "Device 1", type: "Temperature", reading: 10, label: 'Device1', status: false },
   { value: "Device 2", type: "Temperature", reading: 20, label: 'Device2', status: true },
   { value: "Device 3", type: "Humidity", reading: 32.5, label: 'Device3', status: true },
@@ -49,8 +48,9 @@ class SwitchButton extends Component {
       this.setState({ masterSwitch: checked })
     } else {
       this.setState({ checked })
-      this.setState({ status: this.status });
-      this.forceUpdate();
+      this.setState({ status: this.checked });
+      
+      return this.status;
     }
   }
 

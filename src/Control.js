@@ -49,6 +49,7 @@ class SwitchButton extends Component {
     } else {
       this.setState({ checked })
       this.setState({ status: this.checked });
+      
       return this.status;
     }
   }

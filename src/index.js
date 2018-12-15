@@ -11,13 +11,12 @@ import Amplify from 'aws-amplify';
 
 import config from './aws-exports';
 
-//Amplify.configure(config)
+Amplify.configure(config)
 
 ReactDOM.render((
     <BrowserRouter>
         <div>
-            <ANavbar />
-            <Main />
+            <AWSSignIn />
         </div>
     </BrowserRouter>), document.getElementById('root'));
 

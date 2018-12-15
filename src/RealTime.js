@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { VictoryChart, VictoryLine } from 'victory';
-<<<<<<< HEAD
-import { DropdownButton,PageHeader, ButtonToolbar,MenuItem} from 'react-bootstrap';
-=======
 import { DropdownButton, Dropdown,PageHeader, ButtonToolbar,MenuItem} from 'react-bootstrap';
->>>>>>> copying frontend branch to master
 
 class RealTime extends Component {
 

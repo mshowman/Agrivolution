@@ -43,20 +43,12 @@ class CropCycle extends Component{
   constructor(props) {
       super(props);
 
-<<<<<<< HEAD
-      /*using constants for now but this section will be popluated with actual data later*/
-=======
       {/*using constants for now but this section will be popluated with actual data later*/}
->>>>>>> copying frontend branch to master
       const farmName = "Farm #_____";
       const bRules = ["Tomato", "Lettuce","Cucumber","Carrot"];
 
 
-<<<<<<< HEAD
-      /*later use this section for the API call to populate the array*/
-=======
       {/*later use this section for the API call to populate the array*/}
->>>>>>> copying frontend branch to master
       const growAreas = [];
       for(let j = 1; j < 11; j++){
          growAreas.push({

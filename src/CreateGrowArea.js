@@ -1,19 +1,11 @@
 //growarea.js
 
 import React, { Component } from 'react';
-<<<<<<< HEAD
-
-=======
->>>>>>> copying frontend branch to master
 import { PageHeader, Panel, Modal, Well, Button, FormGroup, FormControl, ControlLabel } from 'react-bootstrap';
 import Select from 'react-select';
 
 class CreateGrowArea extends Component {
   constructor(props) {
-<<<<<<< HEAD
-
-=======
->>>>>>> copying frontend branch to master
     super(props);
 
     {/*later use this section for the API call to populate the array*/ }

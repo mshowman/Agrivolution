@@ -3,21 +3,18 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 import './index.css';
 import AWSSignIn from './AWSSignIn';
-import ANavbar from './ANavbar';
-import Main from './Main';
 import * as serviceWorker from './serviceWorker';
 
 import Amplify from 'aws-amplify';
 
 import config from './aws-exports';
 
-//Amplify.configure(config)
+Amplify.configure(config)
 
 ReactDOM.render((
     <BrowserRouter>
         <div>
-            <ANavbar />
-            <Main />
+            <AWSSignIn />
         </div>
     </BrowserRouter>), document.getElementById('root'));
 

@@ -7,13 +7,13 @@ import Switch from "react-switch";
 
 var d2 = '';
 
-const devices = [
-  { value: "Device 1", type: "Temperature", reading: 10, label: 'Device1', status: false },
+var devices = [
+  { value: "Device 1", type: "Temperature", reading: 10, label: 'Device1', status: true },
   { value: "Device 2", type: "Temperature", reading: 20, label: 'Device2', status: true },
   { value: "Device 3", type: "Humidity", reading: 32.5, label: 'Device3', status: true },
   { value: "Device 4", type: "Humidity", reading: 68.4, label: 'Device4', status: true },
   { value: "Device 5", type: "Water Level", reading: 2, label: 'Device5', status: true },
-  { value: "Device 6", type: "Water Level", reading: 6, label: 'Device6', status: false },
+  { value: "Device 6", type: "Water Level", reading: 6, label: 'Device6', status: true },
   { value: "Device 7", type: "Light Level", reading: 77, label: 'Device7', status: true },
   { value: "Device 8", type: "Light Level", reading: 79, label: 'Device8', status: false },
   { value: "Device 9", type: "Humidity", reading: 79.5, label: 'Device9', status: true },
@@ -35,8 +35,8 @@ class SwitchButton extends Component {
     this.state = {
       device: this.props.device,
       checked: this.props.status,
-      devices: this.props.devicesArray,
       masterStatus: false,
+      deviceArray: this.props.deviceArray
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -44,22 +44,37 @@ class SwitchButton extends Component {
   }
 
   handleChange(checked) {
+    console.log("goo", this.state.checked, checked);
+
+    var callUpdateState = false;
+
+    callUpdateState = (checked != this.state.checked);
+
     if (this.state.device.value === "Master Switch") {
       this.setState({ checked: checked });
       this.setState({ masterSwitch: checked })
+
     } else {
+
+      this.state.device.status=checked;
       this.setState({ checked })
-      this.setState({ status: this.status });
-      this.forceUpdate();
+      this.setState({device: this.state.device})
+
+    }
+
+    if (callUpdateState) {
+      if (this.props && "function" == typeof this.props.updateState) {
+        this.props.updateState();
+      }
     }
   }
 
   createButtonType() {
     if (this.state.masterStatus === true) {
       return (<Switch
-        onChange={this.handleChange}
+        onChange={this.props.updateState,this.handleChange}
         checked={false}
-        id="normal-switch"
+        id="master-switch"
       />);
     } else {
       return (<Switch
@@ -96,13 +111,22 @@ class Control extends Component {
       devices,
       masterSwitch: false,
       d2,
+      displaylist: this.valueOfTrue(devices)
     };
+console.log("yoyo", this)
+console.log("hmm", typeof this.valueOfTrue, this.valueOfTrue)
+this.updateState=this.updateState.bind(this);
 
   }
 
-  valueOfTrue() {
+  updateState(event){
+      console.log("ARE YYOU HERE");
+      this.setState({displaylist:this.valueOfTrue(this.state.devices)})
+  }
+
+  valueOfTrue(devices) {
    return(
-    this.state.devices
+    devices
       .filter(d => d.status === true)
       .map(d2 =>
         <tr>
@@ -111,8 +135,13 @@ class Control extends Component {
           <td>{d2.reading}</td>
         </tr>)
       );
-      
+
   }
+
+ test(event){
+   console.log(event);
+console.log(event.target.device.label,event.target.device.status);
+}
 
 
   render() {
@@ -124,11 +153,18 @@ class Control extends Component {
 
           <div style={styles.resize}>
 
-            <SwitchButton devicesArray={this.state.devices} device={{ value: "Master Switch", label: 'Master' }} />
+            <SwitchButton
+            // devicesArray={this.state.devices}
+            device={{ value: "Master Switch", label: 'Master' }}
+            />
             {
+              console.log("blah", typeof this, this),
               this.state.devices.map((device, i) =>
                 (
-                  <SwitchButton device={device} status={device.status} />
+
+                  <SwitchButton key={i} device={device} status={device.status}
+                  updateState={this.updateState}
+                  />
                 )
               )
             }
@@ -144,7 +180,7 @@ class Control extends Component {
                     <th>Value</th>
                   </tr>
                 </thead>
-                  <tbody>{this.valueOfTrue()}</tbody>
+                  <tbody>{this.state.displaylist}</tbody>
               </Table>
             </Col>
 

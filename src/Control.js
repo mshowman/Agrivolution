@@ -113,14 +113,11 @@ class Control extends Component {
       d2,
       displaylist: this.valueOfTrue(devices)
     };
-console.log("yoyo", this)
-console.log("hmm", typeof this.valueOfTrue, this.valueOfTrue)
 this.updateState=this.updateState.bind(this);
 
   }
 
   updateState(event){
-      console.log("ARE YYOU HERE");
       this.setState({displaylist:this.valueOfTrue(this.state.devices)})
   }
 

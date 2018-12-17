@@ -145,7 +145,7 @@ constructor(){
                             <Select
                                 options={types}
                                 onChange={this.handleChange}
-                            />     
+                            />
                         </Col>
                     </Row>
 
